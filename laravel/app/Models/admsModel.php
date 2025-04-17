@@ -12,4 +12,6 @@ class admsModel extends Model
     use HasFactory;
     protected $table='adms'; //nome da tabela
     
+    protected $fillable = ['nome', 'sobrenome', 'email', 'senha','idade'];
+    
 }//fim da classe model

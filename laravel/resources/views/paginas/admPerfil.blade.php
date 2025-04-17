@@ -100,7 +100,7 @@
               <a href="admHome"><button type="button"  style="width: 100%; border-radius: 30px; font-size: 18px; padding: 12px 24px; backgorund-color:black;">
                 Voltar
               </button></a>
-              <a href="admEditarPerfil"><button type="button"  style="width: 100%; border-radius: 30px; font-size: 18px; padding: 12px 24px; margin-left: 20%;backgorund-color:black;">
+              <a href="{{ route('admseditar') }}"><button type="button"  style="width: 100%; border-radius: 30px; font-size: 18px; padding: 12px 24px; margin-left: 20%;backgorund-color:black;">
                 Editar
               </button></a>
             </div>

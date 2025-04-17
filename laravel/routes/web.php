@@ -284,3 +284,7 @@ Route::get('/admscadastrar',[App\Http\Controllers\admsController::class, 'admsCa
 Route::get('/admslogin',[App\Http\Controllers\admsController::class, 'admsLogin'])->name('admsLogin');
 
 Route::get('/admsperfil', [admsController::class, 'admsPerfil'])->name('admsPerfil');
+
+Route::get('/admseditar', [App\Http\Controllers\admsController::class, 'admsEditar2'])->name('admseditar');
+
+Route::post('/admsatualizar', [admsController::class, 'admsAtualizar2'])->name('admsatualizar');

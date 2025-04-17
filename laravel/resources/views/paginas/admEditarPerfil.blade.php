@@ -1,4 +1,4 @@
-<x-layout titulo="Ediatar Perfil de Administrador">    
+<x-layout titulo="Editar Perfil de Administrador">    
   <nav class="navbar navbar-expand-lg sticky-top" style="background-color: #BDBDBD; padding-top: 20px; padding-bottom: 20px;">
     <div class="container-fluid d-flex justify-content-between align-items-center">
 
@@ -39,7 +39,8 @@
     </div>
   </nav>
 
-  <form action="" method="get">
+  <form action="{{ route('admsatualizar') }}" method="POST">
+  @csrf
   <section class="py-5" style="padding-top: 80px;"> <!-- Ajuste o padding-top para evitar sobreposição -->
   <div class="container">
     <div class="row align-items-center">
@@ -54,7 +55,7 @@
             <div class="col-md-6">
               <h3 style="text-align: center;">Nome:</h3>
               <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome" required style="border-style: solid; border-color: #000000; border-width: 2px; border-radius: 26px;">
+                <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome" required style="border-style: solid; border-color: #000000; border-width: 2px; border-radius: 26px;" value="{{ $adms->nome }}">
                 <label for="nome">Nome</label>
               </div>
             </div>
@@ -63,7 +64,7 @@
             <div class="col-md-6">
               <h3 style="text-align: center;">Sobrenome:</h3>
               <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="sobrenome" name="sobrenome" placeholder="Digite seu sobrenome" required style="border-style: solid; border-color: #000000; border-width: 2px; border-radius: 26px;">
+                <input type="text" class="form-control" id="sobrenome" name="sobrenome" placeholder="Digite seu sobrenome" required style="border-style: solid; border-color: #000000; border-width: 2px; border-radius: 26px;" value="{{ $adms->sobrenome }}">
                 <label for="sobrenome">Sobrenome</label>
               </div>
             </div>
@@ -72,7 +73,7 @@
             <div class="col-md-6">
               <h3 style="text-align: center;">E-mail:</h3>
               <div class="form-floating mb-3">
-                <input type="email" class="form-control" id="email" name="email" placeholder="nome@exemplo.com" required style="border-style: solid; border-color: #000000; border-width: 2px; border-radius: 26px;">
+                <input type="email" class="form-control" id="email" name="email" placeholder="nome@exemplo.com" required style="border-style: solid; border-color: #000000; border-width: 2px; border-radius: 26px;" value="{{ $adms->email }}">
                 <label for="email">E-mail</label>
               </div>
             </div>
@@ -81,7 +82,7 @@
             <div class="col-md-6">
               <h3 style="text-align: center;">Senha:</h3>
               <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="senha" name="senha" placeholder="Senha" required style="border-style: solid; border-color: #000000; border-width: 2px; border-radius: 26px;">
+                <input type="text" class="form-control" id="senha" name="senha" placeholder="Senha" required style="border-style: solid; border-color: #000000; border-width: 2px; border-radius: 26px;" value="{{ $adms->senha }}">
                 <label for="senha">Senha</label>
               </div>
             </div>
@@ -90,7 +91,7 @@
             <div class="col-md-6">
               <h3 style="text-align: center;">Idade:</h3>
               <div class="form-floating mb-3">
-                <input type="number" class="form-control" id="idade" name="idade" placeholder="Idade" required style="border-style: solid; border-color: #000000; border-width: 2px; border-radius: 26px;">
+                <input type="number" class="form-control" id="idade" name="idade" placeholder="Idade" required style="border-style: solid; border-color: #000000; border-width: 2px; border-radius: 26px;" value="{{ $adms->idade }}">
                 <label for="idade">Idade</label>
               </div>
             </div>
@@ -100,7 +101,7 @@
               <a href="admPerfil"><button type="button"  style="width: 100%; border-radius: 30px; font-size: 18px; padding: 12px 24px;backgorund-color:black;">
                 Voltar
               </button></a>
-              <a href=""><button type="button"  style="width: 100%; border-radius: 30px; font-size: 18px; padding: 12px 24px; margin-left: 20%;backgorund-color:black;">
+              <a href=""><button type="submit"  style="width: 100%; border-radius: 30px; font-size: 18px; padding: 12px 24px; margin-left: 20%;backgorund-color:black;">
                 Confirmar
               </button></a>
             </div>

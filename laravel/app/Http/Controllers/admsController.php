@@ -91,4 +91,50 @@ class admsController extends Controller{
         return redirect('/consultar');
     }
 
+    public function admsEditar2(){
+        // Verifica se o funcionário está logado na sessão
+        if (!session()->has('adms')) {
+        }
+
+        // Recupera o funcionário da sessão
+        $adms = session('adms');
+
+        // Exibe o formulário de edição, passando os dados do funcionário
+        return view('paginas.admEditarPerfil', compact('adms'));
+    }
+
+    public function admsAtualizar2(Request $request){
+        // Verifica se o funcionário está logado na sessão
+        if (!session()->has('adms')) {
+
+        }
+
+        // Validação dos dados recebidos
+        $request->validate([
+            'nome' => 'required|string|max:255',
+            'sobrenome' => 'required|string',
+            'email' => 'required|string',
+            'senha' => 'required|string',
+            'idade' => 'required|string',
+        ]);
+
+        // Recupera os dados do funcionário da sessão
+        $adms = session('adms');
+
+        // Atualiza as informações do funcionário
+        $adms->update([
+            'nome' => $request->nome,
+            'sobrenome' => $request->sobrenome,
+            'email' => $request->email,
+            'senha' => $request->senha,
+            'idade' => $request->idade,
+        ]);
+
+        // Atualiza a sessão com os novos dados do funcionário
+        session(['adms' => $adms]);
+
+        // Redireciona para a página de homeLogado ou outra página que desejar
+        return redirect('admsperfil');
+    }
+
 }//fim da classe
