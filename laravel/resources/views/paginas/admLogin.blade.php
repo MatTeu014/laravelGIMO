@@ -1,4 +1,4 @@
-<x-layout titulo="loginAdm">    
+<x-layout titulo="admLogin">    
 
   <nav class="navbar navbar-expand-lg" style="background-color: #BDBDBD; padding-top: 20px; padding-bottom: 20px;">
     <div class="container-fluid d-flex justify-content-between align-items-center">
@@ -20,19 +20,23 @@
   <!-- Titulo Login -->
   <br>
   <br>
-  <h2 class="card-title" style="text-align: center;">Login</h2>
+  <h2 class="card-title" style="text-align: center;">Login:</h2>
   <br>
 
   <!-- Formulário de Login (Método GET) -->
-  <form method="GET" action=""> <!-- Adicionando a tag form com method GET -->
+  <form method="GET" action="/admslogin"> <!-- Adicionando a tag form com method GET -->
     <div class="card" style="width:50%; border-color: #BDBDBD; border-width: 2px; margin: auto; border-radius: 30px; text-align: center;">
       <div class="card-body">
-
+      @if (session('failed'))
+    <div class="alert alert-danger" role="alert">
+        {{ session('failed') }}
+    </div>
+    @endif
         <!-- Input e-mail -->  
         <br>
         <h3 style="text-align: center;">E-mail:</h3>
         <div class="form-floating mb-3">
-          <input type="email" class="form-control" id="email" placeholder="nome@exemplo.com" required style="border-style: solid; border-color: #000000; border-width: 2px; border-radius: 26px;">
+          <input type="email" class="form-control" id="email" placeholder="nome@exemplo.com" name="email" required style="border-style: solid; border-color: #000000; border-width: 2px; border-radius: 26px;">
           <label for="email">E-mail</label>
         </div>
         <br>
@@ -40,12 +44,12 @@
         <!-- Input senha -->
         <h3 style="text-align: center;">Senha:</h3>
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="senha" placeholder="Senha" required style="border-style: solid; border-color: #000000; border-width: 2px; border-radius: 26px;">
+          <input type="text" class="form-control" id="senha" placeholder="Senha" name="senha" required style="border-style: solid; border-color: #000000; border-width: 2px; border-radius: 26px;">
           <label for="senha">Senha</label>
         </div>
         <br>
 
-        <a href="" style="float: right; color: #E5CD59;">Esqueci a Senha</a>
+        <a href="admEsqueceuSenha" style="float: right;">Esqueci a Senha</a>
 
         <!-- Botão Entrar -->
         <br>

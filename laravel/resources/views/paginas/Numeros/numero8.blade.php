@@ -1,5 +1,5 @@
-<x-layout titulo="Atividades Usuário">    
-  <nav class="navbar navbar-expand-lg sticky-top" style="background-color: #DA3E41; padding-top: 20px; padding-bottom: 20px;">
+<x-layout titulo="Número 8">    
+  <nav class="navbar navbar-expand-lg sticky-top" style="background-color: #34B764; padding-top: 20px; padding-bottom: 20px;">
     <div class="container-fluid d-flex justify-content-between align-items-center">
 
       <!-- LOGO (Imagem responsiva) -->
@@ -11,16 +11,16 @@
       <div class="d-flex justify-content-center flex-grow-1" style="padding-top:35px;">
         <ul class="navbar-nav d-flex flex-row gap-3">
           <li class="nav-item">
-            <a href="/usuarioHome" class="btn btn-danger" style="border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Home</a>
+            <a href="usuarioHome" class="btn btn-danger" style="background-color: #34B764; border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Home</a>
           </li>
           <li class="nav-item">
-            <a href="usuarioSobrenos" class="btn btn-danger" style="border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Sobre</a>
+            <a href="usuarioSobrenos" class="btn btn-danger" style="background-color: #34B764; border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Sobre</a>
           </li>
           <li class="nav-item">
-            <a href="usuarioAtividades" class="btn btn-danger" style="border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Atividades</a>
+            <a href="/usuarioAtividades" class="btn btn-danger" style="background-color: #34B764; border: 2px solid black; border-radius: 30px; padding: 12px 10px; font-size: 18px; width: 120px; text-align: center;">Atividades</a>
           </li>
           <li class="nav-item">
-            <a href="usuarioRelatorio" class="btn btn-danger" style="border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Relatório</a>
+            <a href="/usuarioRelatorio" class="btn btn-danger" style="background-color: #34B764; border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Relatório</a>
           </li>
         </ul>
       </div>
@@ -50,30 +50,45 @@
     </div>
   </nav>
 
-  <!-- Seção de Conteúdo -->
-    <section class="py-5" style="padding-top: 80px; text-align: center;">
-        <div class="container" style="margin: auto;">
+    <!-- Seção de Conteúdo -->
+
+        <div class="container" style="height: 800px; width: 800px; border: 2px solid black;">
             <div class="row align-items-center">
 
-                <div class="card" style="width: 18rem; margin-left: 20%; height: 40vh;">
-                    <div class="card-body">
-                        <h5 class="card-title">Letras</h5>
-                        
-                    </div>
-                    <img src="..." class="card-img-top" alt="...">
-                </div>
-                
-                <div class="card" style="width: 18rem; margin-left: 10%; height: 40vh;">
-                    <div class="card-body">
-                        <h5 class="card-title">Números</h5>
-                        
-                    </div>
-                    <img src="..." class="card-img-top" alt="...">
-                </div>
+            <div id="carouselExampleDark" class="carousel carousel-dark slide carousel-dimensions" data-bs-wrap="false">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="10000">
+            <img src="{{URL::to('/assets/img/num8.png')}}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+            <img src="{{URL::to('/assets/img/num8_2.png')}}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="{{URL::to('/assets/img/num8_3.png')}}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="{{URL::to('/assets/img/num8_4.png')}}" class="d-block w-100" alt="...">
+        </div>
+       
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
 
             </div>
         </div>
-    </section>
 
   <!-- Footer -->
   <footer class="text-muted" style="background-color: #D3D3D3; width: 100%; padding-top: 20px; padding-bottom: 20px;">
@@ -90,21 +105,21 @@
           </div>
         </div>
 
-        <!-- Redes Sociais / Link da equipe -->
-        <div class="col-12 col-md-4 mb-4">
+        <!-- LinkedIn (corrigido) -->
+        <div class="col-12 col-md-4 mb-4" style="text-align: center;">
           <h6 class="text-uppercase fw-bold mb-3">LinkedIn</h6>
-          <div class="flex-column align-items-start text-center">
-            <a href="https://www.linkedin.com/in/nome-do-perfil" target="_blank" class="d-block text-decoration-none text-primary mb-2">
-              <i class="fab fa-linkedin me-2"></i>Perfil 1
+          <div class="d-flex flex-column align-items-center">
+            <a href="https://www.linkedin.com/in/giseledahora" target="_blank" class="text-decoration-none text-primary mb-2">
+              <i class="fab fa-linkedin me-2"></i>Gisele da Hora
             </a>
-            <a href="https://www.linkedin.com/in/nome-do-perfil" target="_blank" class="d-block text-decoration-none text-primary mb-2">
-              <i class="fab fa-linkedin me-2"></i>Perfil 2
+            <a href="https://www.linkedin.com/in/isaacsena" target="_blank" class="text-decoration-none text-primary mb-2">
+              <i class="fab fa-linkedin me-2"></i>Isaac Sena
             </a>
-            <a href="https://www.linkedin.com/in/nome-do-perfil" target="_blank" class="d-block text-decoration-none text-primary mb-2">
-              <i class="fab fa-linkedin me-2"></i>Perfil 3
+            <a href="https://www.linkedin.com/in/mateuspavani" target="_blank" class="text-decoration-none text-primary mb-2">
+              <i class="fab fa-linkedin me-2"></i>Mateus Pavani
             </a>
-            <a href="https://www.linkedin.com/in/nome-do-perfil" target="_blank" class="d-block text-decoration-none text-primary mb-2">
-              <i class="fab fa-linkedin me-2"></i>Perfil 4
+            <a href="https://www.linkedin.com/in/otaviofidalgo" target="_blank" class="text-decoration-none text-primary mb-2">
+              <i class="fab fa-linkedin me-2"></i>Otávio Fidalgo
             </a>
           </div>
         </div>
@@ -147,3 +162,4 @@
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
 </x-layout>
+

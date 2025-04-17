@@ -20,10 +20,20 @@
   <br>
   <h2 class="card-title" style="text-align: center;">Cadastro de Usuário</h2>
   <br>
-
+  
   <div class="card" style="width: 50%; border-color: #f5e177; border-width: 2px; margin: auto; border-radius: 30px; text-align: center;">
     <div class="card-body">
-      <form action="" method="GET"> <!-- Ajuste o action se necessário -->
+    @if (session('success'))
+    <div class="alert alert-success" role="alert">
+        {{ session('success') }}
+    </div>
+    @endif
+    @if (session('failed'))
+    <div class="alert alert-danger" role="alert">
+        {{ session('failed') }}
+    </div>
+    @endif
+      <form action="/usuarioscadastrar" method="GET"> <!-- Ajuste o action se necessário -->
 
         <!-- Nome -->
         <h3 style="text-align: center;">Nome:</h3>
@@ -79,6 +89,15 @@
         </div>
         <br>
 
+        <h3 style="text-align: center;">Perfil do Usuário:</h3>
+        <select class="form-select" id="perfil" name="perfil" required
+          style="border-style: solid; border-color: #000000; border-width: 2px; border-radius: 26px;">
+          <option selected disabled>Escolha seu Perfil</option>
+          <option value="Aluno">Aluno</option>
+          <option value="Professor">Professor</option>
+        </select>
+        <br><br>
+
         <!-- Série/Ano -->
         <h3 style="text-align: center;">Série/Ano:</h3>
         <select class="form-select" id="serie" name="serie" required
@@ -101,6 +120,7 @@
 
       </form>
     </div>
+   
   </div>
   <br>
 

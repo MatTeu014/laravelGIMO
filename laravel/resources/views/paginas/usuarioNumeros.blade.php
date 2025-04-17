@@ -1,9 +1,9 @@
-<x-layout titulo="Atividades Usuário">    
-  <nav class="navbar navbar-expand-lg sticky-top" style="background-color: #DA3E41; padding-top: 20px; padding-bottom: 20px;">
+<x-layout titulo="Números Usuário">    
+  <nav class="navbar navbar-expand-lg sticky-top" style="background-color: #34B764; padding-top: 20px; padding-bottom: 20px;">
     <div class="container-fluid d-flex justify-content-between align-items-center">
 
       <!-- LOGO (Imagem responsiva) -->
-      <a class="navbar-brand" href="/usuarioHome">
+      <a class="navbar-brand" href="/admHome">
         <img src="{{URL::to('/assets/img/logo_gimo.png')}}" alt="Logo" style="width: 100px; height: auto;">
       </a>
 
@@ -11,16 +11,16 @@
       <div class="d-flex justify-content-center flex-grow-1" style="padding-top:35px;">
         <ul class="navbar-nav d-flex flex-row gap-3">
           <li class="nav-item">
-            <a href="/usuarioHome" class="btn btn-danger" style="border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Home</a>
+            <a href="/admHome" class="btn btn-danger" style="background-color: #34B764; border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Home</a>
           </li>
           <li class="nav-item">
-            <a href="usuarioSobrenos" class="btn btn-danger" style="border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Sobre</a>
+            <a href="usuarioSobrenos" class="btn btn-danger" style="background-color: #34B764; border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Sobre</a>
           </li>
           <li class="nav-item">
-            <a href="usuarioAtividades" class="btn btn-danger" style="border: 2px solid black; border-radius: 30px; padding: 12px 10px; font-size: 18px; width: 120px; text-align: center;">Atividades</a>
+            <a href="usuarioAtividades" class="btn btn-danger" style="background-color: #34B764; border: 2px solid black; border-radius: 30px; padding: 12px 10px; font-size: 18px; width: 120px; text-align: center;">Atividades</a>
           </li>
           <li class="nav-item">
-            <a href="usuarioRelatorio" class="btn btn-danger" style="border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Relatório</a>
+            <a href="usuarioRelatorio" class="btn btn-danger" style="background-color: #34B764; border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Relatório</a>
           </li>
         </ul>
       </div>
@@ -58,83 +58,94 @@
         
         <div class="col">
           <div class="card">
-            <div class="card-body">
-              <img href="" src="..." class="card-img-top" alt="...">
-            </div>
+            <a href="numero0"><div class="card-body">
+              <img src="{{URL::to('/assets/img/num0_4.png')}}" class="card-img-top" alt="..." style="width: 120px;">
+            </div></a>
           </div>
         </div>
 
         <div class="col">
           <div class="card">
-            <div class="card-body">
-              <img href="" src="..." class="card-img-top" alt="...">
-            </div>
+            <a href="numero1"><div class="card-body">
+              <img src="{{URL::to('/assets/img/num1_4.png')}}" class="card-img-top" alt="..." style="width: 120px;">
+            </div></a>
           </div>
         </div>
 
         <div class="col">
           <div class="card">
-            <div class="card-body">
-              <img href="" src="..." class="card-img-top" alt="...">
-            </div>
+            <a href="numero2"><div class="card-body">
+              <img src="{{URL::to('/assets/img/num2_4.png')}}" class="card-img-top" alt="..." style="width: 120px;">
+            </div></a>
           </div>
         </div>
 
         <div class="col">
           <div class="card">
-            <div class="card-body">
-              <img href="" src="..." class="card-img-top" alt="...">
-            </div>
+            <a href="numero3"><div class="card-body">
+              <img src="{{URL::to('/assets/img/num3_4.png')}}" class="card-img-top" alt="..." style="width: 120px;">
+            </div></a>
           </div>
         </div>
 
         <div class="col">
           <div class="card">
-            <div class="card-body">
-              <img href="" src="..." class="card-img-top" alt="...">
-            </div>
+            <a href="numero4"><div class="card-body">
+              <img src="{{URL::to('/assets/img/num4_5.png')}}" class="card-img-top" alt="..." style="width: 120px;">
+            </div></a>
           </div>
         </div>
 
         <div class="col">
           <div class="card">
-            <div class="card-body">
-              <img href="" src="..." class="card-img-top" alt="...">
-            </div>
+            <a  href="numero5"><div class="card-body">
+              <img src="{{URL::to('/assets/img/num5_5.png')}}" class="card-img-top" alt="..." style="width: 120px;">
+            </div></a>
           </div>
         </div>
 
         <div class="col">
           <div class="card">
-            <div class="card-body">
-              <img href="" src="..." class="card-img-top" alt="...">
-            </div>
+            <a href="numero6"><div class="card-body">
+              <img src="{{URL::to('/assets/img/num6_4.png')}}" class="card-img-top" alt="..." style="width: 120px;">
+            </div></a>
           </div>
         </div>
 
         <div class="col">
           <div class="card">
-            <div class="card-body">
-              <img href="" src="..." class="card-img-top" alt="...">
-            </div>
+            <a href="numero7"><div class="card-body">
+              <img src="{{URL::to('/assets/img/num7_4.png')}}" class="card-img-top" alt="..." style="width: 120px;">
+            </div></a>
           </div>
         </div>
 
         <div class="col">
           <div class="card">
-            <div class="card-body">
-              <img href="" src="..." class="card-img-top" alt="...">
-            </div>
+            <a href="numero8"><div class="card-body">
+              <img src="{{URL::to('/assets/img/num8_4.png')}}" class="card-img-top" alt="..." style="width: 120px;">
+            </div></a>
           </div>
         </div>
 
         <div class="col">
           <div class="card">
-            <div class="card-body">
-              <img href="" src="..." class="card-img-top" alt="...">
-            </div>
+            <a href="numero9"><div class="card-body">
+              <img src="{{URL::to('/assets/img/num9_4.png')}}" class="card-img-top" alt="..."style="width: 120px;">
+            </div></a>
           </div>
         </div>
+
+        <div class="col">
+          <div class="card">
+            <a href="numero10"><div class="card-body">
+              <img  src="{{URL::to('/assets/img/num10_6.png')}}" class="card-img-top" alt="..."style="width: 120px;">
+            </div></a>
+          </div>
+        </div>
+
+    
+
 
       </div>
 

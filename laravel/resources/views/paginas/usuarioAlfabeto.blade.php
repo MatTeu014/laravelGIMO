@@ -1,5 +1,5 @@
 <x-layout titulo="Alfabeto Usuário">    
-  <nav class="navbar navbar-expand-lg sticky-top" style="background-color: #DA3E41; padding-top: 20px; padding-bottom: 20px;">
+  <nav class="navbar navbar-expand-lg sticky-top" style="background-color: #4782DA; padding-top: 20px; padding-bottom: 20px;">
     <div class="container-fluid d-flex justify-content-between align-items-center">
 
       <!-- LOGO (Imagem responsiva) -->
@@ -11,16 +11,16 @@
       <div class="d-flex justify-content-center flex-grow-1" style="padding-top:35px;">
         <ul class="navbar-nav d-flex flex-row gap-3">
           <li class="nav-item">
-            <a href="/usuarioHome" class="btn btn-danger" style="border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Home</a>
+            <a href="/usuarioHome" class="btn btn-danger" style=" background-color: #4782DA; border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Home</a>
           </li>
           <li class="nav-item">
-            <a href="usuarioSobrenos" class="btn btn-danger" style="border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Sobre</a>
+            <a href="usuarioSobrenos" class="btn btn-danger" style="background-color: #4782DA; border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Sobre</a>
           </li>
           <li class="nav-item">
-            <a href="usuarioAtividades" class="btn btn-danger" style="border: 2px solid black; border-radius: 30px; padding: 12px 10px; font-size: 18px; width: 120px; text-align: center;">Atividades</a>
+            <a href="usuarioAtividades" class="btn btn-danger" style="background-color: #4782DA; border: 2px solid black; border-radius: 30px; padding: 12px 10px; font-size: 18px; width: 120px; text-align: center;">Atividades</a>
           </li>
           <li class="nav-item">
-            <a href="usuarioRelatorio" class="btn btn-danger" style="border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Relatório</a>
+            <a href="usuarioRelatorio" class="btn btn-danger" style="background-color: #4782DA; border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Relatório</a>
           </li>
         </ul>
       </div>
@@ -58,209 +58,210 @@
         
         <div class="col">
           <div class="card">
-            <div class="card-body">
-              <img href="" src="" class="card-img-top" alt="...">
-            </div>
+            <a href="letraA"><div class="card-body">
+              <img href="" src="{{URL::to('/assets/img/letraA_5.png')}}" class="card-img-top" alt="..." style="width: 120px;">
+            </div></a>
           </div>
         </div>
 
         <div class="col">
           <div class="card">
-            <div class="card-body">
-              <img href="" src="..." class="card-img-top" alt="...">
-            </div>
+          <a href="letraB"><div class="card-body">
+            <img href="" src="{{URL::to('/assets/img/letraB_5.png')}}" class="card-img-top" alt="..." style="width: 120px;">
+            </div></a>
           </div>
         </div>
 
         <div class="col">
           <div class="card">
-            <div class="card-body">
-              <img href="" src="..." class="card-img-top" alt="...">
-            </div>
+            <a href="letraC"><div class="card-body">
+            <img href="" src="{{URL::to('/assets/img/letraC_3.png')}}" class="card-img-top" alt="..." style="width: 120px;">            
+          </div></a>
           </div>
         </div>
 
         <div class="col">
           <div class="card">
-            <div class="card-body">
-              <img href="" src="..." class="card-img-top" alt="...">
-            </div>
+            <a href="letraD"><div class="card-body">
+            <img href="" src="{{URL::to('/assets/img/letraD_4.png')}}" class="card-img-top" alt="..." style="width: 120px;">            
+          </div></a>
           </div>
         </div>
 
         <div class="col">
           <div class="card">
-            <div class="card-body">
-              <img href="" src="..." class="card-img-top" alt="...">
-            </div>
+            <a href="letraE"><div class="card-body">
+            <img href="" src="{{URL::to('/assets/img/letraE_6.png')}}" class="card-img-top" alt="..." style="width: 120px;">            
+          </div></a>
           </div>
         </div>
 
         <div class="col">
           <div class="card">
-            <div class="card-body">
-              <img href="" src="..." class="card-img-top" alt="...">
-            </div>
+            <a href="letraF"><div class="card-body">
+            <img href="" src="{{URL::to('/assets/img/letraF_5.png')}}" class="card-img-top" alt="..." style="width: 120px;">            
+          </div></a>
           </div>
         </div>
 
         <div class="col">
           <div class="card">
-            <div class="card-body">
-              <img href="" src="..." class="card-img-top" alt="...">
-            </div>
+            <a href="letraG"><div class="card-body">
+            <img href="" src="{{URL::to('/assets/img/letraG_4.png')}}" class="card-img-top" alt="..." style="width: 120px;">            
+          </div></a>
           </div>
         </div>
 
         <div class="col">
           <div class="card">
-            <div class="card-body">
-              <img href="" src="..." class="card-img-top" alt="...">
-            </div>
+            <a href="letraH"><div class="card-body">
+            <img href="" src="{{URL::to('/assets/img/letraH_5.png')}}" class="card-img-top" alt="..." style="width: 120px;">            
+          </div></a>
           </div>
         </div>
 
         <div class="col">
           <div class="card">
-            <div class="card-body">
-              <img href="" src="..." class="card-img-top" alt="...">
-            </div>
+            <a href="letraI"><div class="card-body">
+            <img href="" src="{{URL::to('/assets/img/letraI_3.png')}}" class="card-img-top" alt="..." style="width: 120px;">            
+          </div></a>
           </div>
         </div>
 
         <div class="col">
           <div class="card">
-            <div class="card-body">
-              <img href="" src="..." class="card-img-top" alt="...">
-            </div>
+            <a href="letraJ"><div class="card-body">
+            <img href="" src="{{URL::to('/assets/img/letraJ_5.png')}}" class="card-img-top" alt="..." style="width: 120px;">            
+          </div></a>
           </div>
         </div>
 
         <div class="col">
           <div class="card">
-            <div class="card-body">
-              <img href="" src="..." class="card-img-top" alt="...">
-            </div>
+            <a href="letraK"><div class="card-body">
+            <img href="" src="{{URL::to('/assets/img/letraK_5.png')}}" class="card-img-top" alt="..." style="width: 120px;">            
+          </div></a>
           </div>
         </div>
 
         <div class="col">
           <div class="card">
-            <div class="card-body">
-              <img href="" src="..." class="card-img-top" alt="...">
-            </div>
+            <a href="letraL"><div class="card-body">
+            <img href="" src="{{URL::to('/assets/img/letraL_4.png')}}" class="card-img-top" alt="..." style="width: 120px;">            
+          </div></a>
           </div>
         </div>
 
         <div class="col">
           <div class="card">
-            <div class="card-body">
-              <img href="" src="..." class="card-img-top" alt="...">
-            </div>
+            <a href="letraM"><div class="card-body">
+            <img href="" src="{{URL::to('/assets/img/letraM_6.png')}}" class="card-img-top" alt="..." style="width: 120px;">            
+          </div></a>
           </div>
         </div>
 
         <div class="col">
           <div class="card">
-            <div class="card-body">
-              <img href="" src="..." class="card-img-top" alt="...">
-            </div>
+            <a href="letraN"><div class="card-body">
+            <img href="" src="{{URL::to('/assets/img/letraN_5.png')}}" class="card-img-top" alt="..." style="width: 120px;">            
+          </div></a>
           </div>
         </div>
 
         <div class="col">
           <div class="card">
-            <div class="card-body">
-              <img href="" src="..." class="card-img-top" alt="...">
-            </div>
+            <a href="letraO"><div class="card-body">
+            <img href="" src="{{URL::to('/assets/img/letraO_3.png')}}" class="card-img-top" alt="..." style="width: 120px;">            
+          </div></a>
           </div>
         </div>
 
         <div class="col">
           <div class="card">
-            <div class="card-body">
-              <img href="" src="..." class="card-img-top" alt="...">
-            </div>
+            <a href="letraP"><div class="card-body">
+            <img href="" src="{{URL::to('/assets/img/letraP_4.png')}}" class="card-img-top" alt="..." style="width: 120px;">            
+          </div></a>
           </div>
         </div>
 
         <div class="col">
           <div class="card">
-            <div class="card-body">
-              <img href="" src="..." class="card-img-top" alt="...">
-            </div>
+            <a href="letraQ"><div class="card-body">
+            <img href="" src="{{URL::to('/assets/img/letraQ_4.png')}}" class="card-img-top" alt="..." style="width: 120px;">            
+          </div></a>
           </div>
         </div>
 
         <div class="col">
           <div class="card">
-            <div class="card-body">
-              <img href="" src="..." class="card-img-top" alt="...">
-            </div>
+            <a href="letraR"><div class="card-body">
+            <img href="" src="{{URL::to('/assets/img/letraR_5.png')}}" class="card-img-top" alt="..." style="width: 120px;">            
+          </div></a>
           </div>
         </div>
 
         <div class="col">
           <div class="card">
-            <div class="card-body">
-              <img href="" src="..." class="card-img-top" alt="...">
-            </div>
+            <a href="letraS"><div class="card-body">
+            <img href="" src="{{URL::to('/assets/img/letraS_4.png')}}" class="card-img-top" alt="..." style="width: 120px;">            
+          </div></a>
           </div>
         </div>
 
         <div class="col">
           <div class="card">
-            <div class="card-body">
-              <img href="" src="..." class="card-img-top" alt="...">
-            </div>
+            <a href="letraT"><div class="card-body">
+            <img href="" src="{{URL::to('/assets/img/letraT_4.png')}}" class="card-img-top" alt="..." style="width: 120px;">            
+          </div></a>
           </div>
         </div>
 
         <div class="col">
           <div class="card">
-            <div class="card-body">
-              <img href="" src="..." class="card-img-top" alt="...">
-            </div>
+            <a href="letraU"><div class="card-body">
+            <img href="" src="{{URL::to('/assets/img/letraU_3.png')}}" class="card-img-top" alt="..." style="width: 120px;">            
+          </div></a>
           </div>
         </div>
 
         <div class="col">
           <div class="card">
-            <div class="card-body">
-              <img href="" src="..." class="card-img-top" alt="...">
-            </div>
+            <a href="letraV"><div class="card-body">
+            <img href="" src="{{URL::to('/assets/img/letraV_4.png')}}" class="card-img-top" alt="..." style="width: 120px;">            
+          </div></a>
+          </div>
+
+        </div>
+
+        <div class="col">
+          <div class="card">
+            <a href="letraW"><div class="card-body">
+            <img href="" src="{{URL::to('/assets/img/letraW_6.png')}}" class="card-img-top" alt="..." style="width: 120px;">            
+          </div></a>
           </div>
         </div>
 
         <div class="col">
           <div class="card">
-            <div class="card-body">
-              <img href="" src="..." class="card-img-top" alt="...">
-            </div>
+            <a href="letraX"><div class="card-body">
+            <img href="" src="{{URL::to('/assets/img/letraX_4.png')}}" class="card-img-top" alt="..." style="width: 120px;">            
+          </div></a>
           </div>
         </div>
 
         <div class="col">
           <div class="card">
-            <div class="card-body">
-              <img href="" src="..." class="card-img-top" alt="...">
-            </div>
+            <a href="letraY"><div class="card-body">
+            <img href="" src="{{URL::to('/assets/img/letraY_4.png')}}" class="card-img-top" alt="..." style="width: 120px;">            
+          </div></a>
           </div>
         </div>
 
         <div class="col">
           <div class="card">
-            <div class="card-body">
-              <img href="" src="..." class="card-img-top" alt="...">
-            </div>
-          </div>
-        </div>
-
-        <div class="col">
-          <div class="card">
-            <div class="card-body">
-              <img href="" src="..." class="card-img-top" alt="...">
-            </div>
+            <a href="letraZ"><div class="card-body">
+            <img href="" src="{{URL::to('/assets/img/letraZ_5.png')}}" class="card-img-top" alt="..." style="width: 120px;">            
+          </div></a>
           </div>
         </div>
 

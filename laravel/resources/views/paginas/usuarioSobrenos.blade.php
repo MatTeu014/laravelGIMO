@@ -50,21 +50,56 @@
     </div>
   </nav>
 
-  <!-- CARDS ALINHADOS -->
-  <div class="container my-5">
-    <div class="row justify-content-center g-4">
-      @for ($i = 0; $i < 4; $i++)
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center">
-          <div class="card" style="width: 100%; max-width: 18rem;">
-            <img src="https://via.placeholder.com/286x180" class="card-img-top" alt="Imagem exemplo">
-            <div class="card-body">
-              <p class="card-text">Texto de exemplo para o card número {{ $i + 1 }}.</p>
-            </div>
-          </div>
-        </div>
-      @endfor
+  <div class="row row-cols-1 row-cols-md-4 g-4">
+  <div class="col">
+    <div class="card">
+      <img src="{{URL::to('/assets/img/gisele.png')}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Gisele da Hora Silva</h5>
+        <p class="card-text">•	18 anos;</p>
+        <p class="card-text">•	Formanda de Técnico de Informática no Senac de São Bernardo do Campo;</p>
+        <p class="card-text">•	Estudante de bacharelado em Ciências da computação no Senac Santo Amaro.</p>
+      </div>
     </div>
   </div>
+  <div class="col">
+    <div class="card">
+      <img src="{{URL::to('/assets/img/isaac.png')}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Isaac Sena Martins</h5>
+        <p class="card-text">•	22 anos;</p>
+        <p class="card-text">•	Formando de Técnico de Informática no Senac de São Bernardo do Campo;</p>
+        <p class="card-text">•	Possuí experiencia em sistema de Banco de Dados (SISQUAL).</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <img src="{{URL::to('/assets/img/mateus.png')}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Mateus Albuquerque Pavani</h5>
+        <p class="card-text">•	20 anos;</p>
+        <p class="card-text">•	Formando de Técnico de Informática no Senac de São Bernardo do Campo;</p>
+        <p class="card-text">•	Formado em cursos rápidos em manutenção de computadores e redes pelo Senai;</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <img src="{{URL::to('/assets/img/otavio.png')}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Otávio Fidalgo</h5>
+        <p class="card-text">•	22 anos;</p>
+        <p class="card-text">•	Formado em curso superior em Fotografia pela Universidade Paulista;</p>
+        <p class="card-text">•	Especializado em Fotografia Gastronômica;</p>
+        <p class="card-text">•	Formando em Técnico de Informática no Senac São Bernardo do Campo;</p>
+        <p class="card-text">•	Experiente em organização de Eventos e em estoques;</p>
+        <p class="card-text">•	Experiente em correção de textos, documentos e roteirização;</p>
+        <p class="card-text">•	Experiencia em direção de arte e fotografia.</p>
+      </div>
+    </div>
+  </div>
+</div>
 
   <!-- FOOTER -->
   <footer class="text-muted" style="background-color: #D3D3D3; width: 100%;">

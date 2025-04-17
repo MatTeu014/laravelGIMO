@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\admsController;
+use App\Http\Controllers\usuariosController;
 
 //Home
 Route::get('/', function () {
@@ -69,19 +71,19 @@ Route::get('usuarioNumeros', function () {
 
 
 //Adm
-Route::get('homeAdm', function () {
+Route::get('admHome', function () {
     return view('paginas.admHome');
 });
 
-Route::get('loginAdm', function () {
+Route::get('admLogin', function () {
     return view('paginas.admLogin');
 });
 
-Route::get('cadastroAdm', function () {
+Route::get('admCadastro', function () {
     return view('paginas.admCadastro');
 });
 
-Route::get('sobrenosAdm', function () {
+Route::get('admSobrenos', function () {
     return view('paginas.admSobrenos');
 });
 
@@ -93,7 +95,7 @@ Route::get('admAlterarSenha', function () {
     return view('paginas.admAlterarSenha');
 });
 
-Route::get('perfilAdm', function () {
+Route::get('admPerfil', function () {
     return view('paginas.admPerfil');
 });
 
@@ -207,3 +209,78 @@ Route::get('letraY', function () {
 Route::get('letraZ', function () {
     return view('paginas/Letras.letraZ');
 });
+
+
+
+
+//Números
+
+Route::get('numero0', function () {
+    return view('paginas/Numeros.numero0');
+});
+
+Route::get('numero1', function () {
+    return view('paginas/Numeros.numero1');
+});
+
+Route::get('numero2', function () {
+    return view('paginas/Numeros.numero2');
+});
+
+Route::get('numero3', function () {
+    return view('paginas/Numeros.numero3');
+});
+
+Route::get('numero4', function () {
+    return view('paginas/Numeros.numero4');
+});
+
+Route::get('numero5', function () {
+    return view('paginas/Numeros.numero5');
+});
+
+Route::get('numero6', function () {
+    return view('paginas/Numeros.numero6');
+});
+
+Route::get('numero7', function () {
+    return view('paginas/Numeros.numero7');
+});
+
+Route::get('numero8', function () {
+    return view('paginas/Numeros.numero8');
+});
+
+Route::get('numero9', function () {
+    return view('paginas/Numeros.numero9');
+});
+
+Route::get('numero10', function () {
+    return view('paginas/Numeros.numero10');
+});
+
+
+
+//Funções Usuários
+
+Route::get('/usuarioscadastrar',[App\Http\Controllers\usuariosController::class, 'usuariosCadastrar'])->name('usuariosCadastrar');
+
+Route::get('/usuarioslogin', [App\Http\Controllers\usuariosController::class, 'usuariosLogin'])->name('usuariosLogin');
+
+Route::get('/usuarioperfil', [App\Http\Controllers\usuariosController::class, 'usuarioPerfil'])->name('usuarioperfil');
+
+Route::get('/usuarioeditar', [App\Http\Controllers\usuariosController::class, 'usuarioEditar'])->name('usuarioeditar');
+
+Route::post('/usuarioatualizar', [usuariosController::class, 'usuarioAtualizar'])->name('usuarioatualizar');
+
+
+
+
+
+//Funções Adms
+
+Route::get('/admscadastrar',[App\Http\Controllers\admsController::class, 'admsCadastrar'])->name('admsCadastrar');
+
+Route::get('/admslogin',[App\Http\Controllers\admsController::class, 'admsLogin'])->name('admsLogin');
+
+Route::get('/admsperfil', [admsController::class, 'admsPerfil'])->name('admsPerfil');

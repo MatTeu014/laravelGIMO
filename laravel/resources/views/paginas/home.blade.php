@@ -33,7 +33,7 @@
       <form class="d-flex" role="search">
         <a href="usuarioLogin" class="btn"
            style="background-color: white; border: 0px solid black; border-radius: 30px; padding: 6px 17px; font-size: 19px; width: 100px; text-align: center; color: #DA3E41;">Login</a>
-        <a href="loginAdm" class="btn ms-2"
+        <a href="admLogin" class="btn ms-2"
            style="background-color: white; border: 0px solid black; border-radius: 30px; padding: 6px 17px; font-size: 19px; width: 100px; text-align: center; color: #DA3E41;">Adm</a>
       </form>
     </div>

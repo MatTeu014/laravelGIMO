@@ -1,9 +1,9 @@
-<x-layout titulo="sobrenos">
-<nav class="navbar navbar-expand-lg sticky-top" style="background-color: #DA3E41; padding-top: 20px; padding-bottom: 20px;">
+<x-layout titulo="Número 4">    
+  <nav class="navbar navbar-expand-lg sticky-top" style="background-color: #34B764; padding-top: 20px; padding-bottom: 20px;">
     <div class="container-fluid d-flex justify-content-between align-items-center">
 
       <!-- LOGO (Imagem responsiva) -->
-      <a class="navbar-brand" href="/homeAdm">
+      <a class="navbar-brand" href="/usuarioHome">
         <img src="{{URL::to('/assets/img/logo_gimo.png')}}" alt="Logo" style="width: 100px; height: auto;">
       </a>
 
@@ -11,16 +11,16 @@
       <div class="d-flex justify-content-center flex-grow-1" style="padding-top:35px;">
         <ul class="navbar-nav d-flex flex-row gap-3">
           <li class="nav-item">
-            <a href="/" class="btn btn-danger" style="border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Home</a>
+            <a href="usuarioHome" class="btn btn-danger" style="background-color: #34B764; border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Home</a>
           </li>
           <li class="nav-item">
-            <a href="/sobre" class="btn btn-danger" style="border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Sobre</a>
+            <a href="usuarioSobrenos" class="btn btn-danger" style="background-color: #34B764; border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Sobre</a>
           </li>
           <li class="nav-item">
-            <a href="/atividade" class="btn btn-danger" style="border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Atividade</a>
+            <a href="/usuarioAtividades" class="btn btn-danger" style="background-color: #34B764; border: 2px solid black; border-radius: 30px; padding: 12px 10px; font-size: 18px; width: 120px; text-align: center;">Atividades</a>
           </li>
           <li class="nav-item">
-            <a href="/relatorio" class="btn btn-danger" style="border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Relatório</a>
+            <a href="/usuarioRelatorio" class="btn btn-danger" style="background-color: #34B764; border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Relatório</a>
           </li>
         </ul>
       </div>
@@ -39,7 +39,7 @@
                   <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
                 </svg>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Perfil</a></li>
+                  <li><a class="dropdown-item" href="/usuarioPerfil">Perfil</a></li>
                   <li><a class="dropdown-item" href="/">Sair</a></li>
                 </ul>
               </li>
@@ -50,27 +50,54 @@
     </div>
   </nav>
 
-  <!-- CARDS ALINHADOS -->
-  <div class="container my-5">
-    <div class="row justify-content-center g-4">
-      @for ($i = 0; $i < 4; $i++)
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center">
-          <div class="card" style="width: 100%; max-width: 18rem;">
-            <img src="https://via.placeholder.com/286x180" class="card-img-top" alt="Imagem exemplo">
-            <div class="card-body">
-              <p class="card-text">Texto de exemplo para o card número {{ $i + 1 }}.</p>
-            </div>
-          </div>
-        </div>
-      @endfor
-    </div>
-  </div>
+    <!-- Seção de Conteúdo -->
 
-  <!-- FOOTER -->
-  <footer class="text-muted" style="background-color: #D3D3D3; width: 100%;">
-    <div class="container py-5">
+        <div class="container" style="height: 800px; width: 800px; border: 2px solid black;">
+            <div class="row align-items-center">
+
+            <div id="carouselExampleDark" class="carousel carousel-dark slide carousel-dimensions" data-bs-wrap="false">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 5"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="10000">
+            <img src="{{URL::to('/assets/img/num4.png')}}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+            <img src="{{URL::to('/assets/img/num4_2.png')}}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="{{URL::to('/assets/img/num4_3.png')}}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="{{URL::to('/assets/img/num4_4.png')}}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="{{URL::to('/assets/img/num4_5.png')}}" class="d-block w-100" alt="...">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+            </div>
+        </div>
+
+  <!-- Footer -->
+  <footer class="text-muted" style="background-color: #D3D3D3; width: 100%; padding-top: 20px; padding-bottom: 20px;">
+    <div class="container">
       <div class="row text-center text-md-start">
-        <!-- Desenvolvedores -->
+        <!-- Projeto GIMO -->
         <div class="col-12 col-md-4 mb-4">
           <h6 class="text-uppercase fw-bold mb-3">Projeto GIMO Desenvolvido por:</h6>
           <div class="d-flex flex-column align-items-start">
@@ -82,7 +109,7 @@
         </div>
 
         <!-- LinkedIn (corrigido) -->
-        <div class="col-12 col-md-4 mb-4">
+        <div class="col-12 col-md-4 mb-4" style="text-align: center;">
           <h6 class="text-uppercase fw-bold mb-3">LinkedIn</h6>
           <div class="d-flex flex-column align-items-center">
             <a href="https://www.linkedin.com/in/giseledahora" target="_blank" class="text-decoration-none text-primary mb-2">
@@ -109,7 +136,7 @@
         </div>
       </div>
 
-      <!-- Redes Sociais -->
+      <!-- Redes Sociais - Siga-nos (centralizado) -->
       <div class="row">
         <div class="col-12 text-center mt-4">
           <h6 class="text-uppercase fw-bold mb-3">Redes Sociais</h6>
@@ -134,6 +161,7 @@
     </div>
   </footer>
 
-  <!-- FontAwesome -->
+  <!-- FontAwesome (caso ainda não esteja incluído) -->
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
 </x-layout>

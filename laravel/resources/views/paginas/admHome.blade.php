@@ -1,29 +1,19 @@
-<x-layout titulo="homeAdm">
-  <nav class="navbar navbar-expand-lg sticky-top" style="background-color: #DA3E41; padding-top: 20px; padding-bottom: 20px;">
+<x-layout titulo="Home Administrador">
+  <nav class="navbar navbar-expand-lg sticky-top" style="background-color: #BDBDBD; padding-top: 20px; padding-bottom: 20px;">
     <div class="container-fluid d-flex justify-content-between align-items-center">
 
       <!-- LOGO (Imagem responsiva) -->
-      <a class="navbar-brand" href="/homeAdm">
+      <a class="navbar-brand" href="/admHome">
         <img src="{{URL::to('/assets/img/logo_gimo.png')}}" alt="Logo" style="width: 100px; height: auto;">
       </a>
 
       <!-- BOTÕES CENTRAIS -->
       <div class="d-flex justify-content-center flex-grow-1" style="padding-top:35px;">
         <ul class="navbar-nav d-flex flex-row gap-3">
-          <li class="nav-item">
-            <a href="/" class="btn btn-danger" style="border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Home</a>
-          </li>
-          <li class="nav-item">
-            <a href="/sobre" class="btn btn-danger" style="border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Sobre</a>
-          </li>
-          <li class="nav-item">
-            <a href="/atividade" class="btn btn-danger" style="border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Atividade</a>
-          </li>
-          <li class="nav-item">
-            <a href="/relatorio" class="btn btn-danger" style="border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Relatório</a>
-          </li>
         </ul>
       </div>
+
+      
 
       <!-- BOTÕES DIREITA (USUÁRIO) -->
       <form class="d-flex" role="search">
@@ -39,7 +29,8 @@
                   <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
                 </svg>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Perfil</a></li>
+                  <li><a  class="dropdown-item" href="{{ route('admsPerfil') }}">Perfil</a></li>
+                  <li><a class="dropdown-item" href="admCadastro">Cadastrar</a></li>
                   <li><a class="dropdown-item" href="/">Sair</a></li>
                 </ul>
               </li>
@@ -51,7 +42,9 @@
   </nav>
 
 
+  <section style="height: 700px; width: 100%; background-color: black;">
 
+  </section>
   
 
 <!-- Footer -->

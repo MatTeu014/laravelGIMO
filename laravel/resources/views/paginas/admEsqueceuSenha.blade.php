@@ -1,4 +1,4 @@
-<x-layout titulo="cadastroAdm">    
+<x-layout titulo="admCadastro">    
 
   <nav class="navbar navbar-expand-lg" style="background-color: #BDBDBD; padding-top: 20px; padding-bottom: 20px;">
     <div class="container-fluid d-flex justify-content-between align-items-center">

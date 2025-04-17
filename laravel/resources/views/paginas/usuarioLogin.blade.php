@@ -24,8 +24,13 @@
 <div class="card" style="width:50%; border-color: #f5e177; border-width: 2px; margin: auto; border-radius: 30px; text-align: center;">
 
     <div class="card-body">
+    @if (session('failed'))
+    <div class="alert alert-danger" role="alert">
+        {{ session('failed') }}
+    </div>
+    @endif
         <!-- Formulário de Login -->
-        <form>
+        <form method="get"  action="/usuarioslogin">
             @csrf <!-- Token de segurança do Laravel -->
 
             <!-- Input e-mail -->  
