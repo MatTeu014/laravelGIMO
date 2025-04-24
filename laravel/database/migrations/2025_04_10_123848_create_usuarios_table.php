@@ -20,8 +20,8 @@ return new class extends Migration
             $table->integer('idade');
             $table->longtext('escola');
             $table->longtext('serie');
-            $table->longtext('perfil');
             $table->longtext('situacao');
+            $table->integer('progresso');
             $table->timestamps();
         });
     }

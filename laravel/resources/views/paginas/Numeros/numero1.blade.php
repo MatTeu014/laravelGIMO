@@ -61,6 +61,7 @@
         <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
         <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
         <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 5"></button>
     </div>
     <div class="carousel-inner">
         <div class="carousel-item active" data-bs-interval="10000">
@@ -75,6 +76,25 @@
         <div class="carousel-item">
             <img src="{{URL::to('/assets/img/num1_4.png')}}" class="d-block w-100" alt="...">
         </div>
+        <div class="carousel-item">
+        <div style="position: relative;">
+            <img src="{{ URL::to('/assets/img/final1.png') }}" class="d-block w-100" alt="...">
+            <button style="
+                background-color: #34B764;
+                border: 2px solid black;
+                border-radius: 30px;
+                padding: 12px 24px;
+                font-size: 18px;
+                text-align: center;
+                position: absolute;
+                top: 85%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            ">
+                Finalizar
+            </button>
+        </div>
+    </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>

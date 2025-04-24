@@ -104,8 +104,41 @@ Route::get('admEditarPerfil', function () {
 });
 
 
-//Letras
 
+
+//professor
+
+Route::get('professorHome', function () {
+    return view('paginas.professorHome');
+});
+
+Route::get('professorLogin', function () {
+    return view('paginas.professorLogin');
+});
+
+Route::get('professorCadastro', function () {
+    return view('paginas.professorCadastro');
+});
+
+Route::get('professorEsqueceuSenha', function () {
+    return view('paginas.professorEsqueceuSenha');
+});
+
+Route::get('professorAlterarSenha', function () {
+    return view('paginas.professorAlterarSenha');
+});
+
+Route::get('professorPerfil', function () {
+    return view('paginas.professorPerfil');
+});
+
+Route::get('professorEditarPerfil', function () {
+    return view('paginas.professorEditarPerfil');
+});
+
+
+
+//Letras
 Route::get('letraA', function () {
     return view('paginas/Letras.letraA');
 });
@@ -273,8 +306,11 @@ Route::get('/usuarioeditar', [App\Http\Controllers\usuariosController::class, 'u
 
 Route::post('/usuarioatualizar', [usuariosController::class, 'usuarioAtualizar'])->name('usuarioatualizar');
 
+Route::post('/usuariodesativar', [usuariosController::class, 'usuarioDesativar'])->name('usuariodesativar');
 
+Route::post('/usuarioprogresso', [usuariosController::class, 'usuarioProgresso'])->name('usuarioprogresso');
 
+Route::get('/usuariosloginrelatorio', [App\Http\Controllers\usuariosController::class, 'usuarioRelatorio'])->name('usuariosloginrelatorio');
 
 
 //Funções Adms

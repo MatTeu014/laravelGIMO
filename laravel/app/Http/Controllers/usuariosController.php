@@ -34,56 +34,33 @@ class usuariosController extends Controller{
         $model->idade = $request->input('idade');
         $model->escola = $request->input('escola');
         $model->serie = $request->input('serie');
-        $model->perfil = $request->input('perfil');
         $model->situacao = "Ativo";
+        $model->progresso = 0;
     
         // Guardar os dados no banco
         $model->save();
     
         return redirect('usuarioCadastro')->with('success', 'Usuário cadastrado com sucesso!');
     }//fim  
-    
-    
-    public function consultar(){
-        $ids = usuariosModel::all();
-        return view('paginas.consultar', compact('ids'));
-    }//fim do consultar
-    
-    public function editar($id){
-        $dado = usuariosModel::findOrFail($id);
-        return view('paginas.editar', compact('dado'));
-    }//fim do editar
-
-    public function atualizar(Request $request, $id){
-        usuariosModel::where('id',$id)->update($request->all());
-        return redirect('/consultar');
-    }//fim do atualizar
-
-    public function excluir(Request $request,$id){
-        usuariosModel::where('id',$id)->delete($request->all());
-        return redirect('/consultar');
-    }
 
     // Processa o login manualmente
     public function usuariosLogin(Request $request){
         $email = $request->input('email');
         $senha = $request->input('senha');
+
+            // Verificar se o funcionário existe e a senha está correta
+            if ($usuarios=usuariosModel::where('email', $email)->where('senha', $senha)->first()) {
         
-        // Buscar o funcionário pelo nome
-     
+                // Armazenar os dados do funcionário na sessão
+                session(['usuarios' => $usuarios]);
         
-        // Verificar se o funcionário existe e a senha está correta
-        if ($usuarios=usuariosModel::where('email', $email)->where('senha', $senha)->first()) {
-    
-            // Armazenar os dados do funcionário na sessão
-            session(['usuarios' => $usuarios]);
-    
-            // Redirecionar para a página homeLogado
-            return redirect('usuarioHome');
-        } else {
-            // Login falhou
-            return redirect('usuarioLogin')->with('failed', 'E-mail ou senha inválido');
-        }
+                // Redirecionar para a página homeLogado
+                return redirect('usuarioHome');
+            } else {
+                // Login falhou
+                return redirect('usuarioLogin')->with('failed', 'E-mail ou senha inválido');
+            }
+ 
 
     }
 
@@ -150,5 +127,39 @@ class usuariosController extends Controller{
         return redirect()->route('usuarioperfil');
     }
 
-    
+    public function usuarioProgresso(){
+            $usuarioSessao = session('usuarios');
+        
+            if (!$usuarioSessao) {
+                return redirect()->back()->with('error', 'Usuário não autenticado.');
+            }
+        
+            // Recarrega o usuário do banco, caso tenha mudado
+            $usuario = usuariosModel::find($usuarioSessao->id);
+        
+            if (!$usuario) {
+                return redirect()->back()->with('error', 'Usuário não encontrado.');
+            }
+        
+            // Atualiza progresso
+            $usuario->progresso = min($usuario->progresso + 10, 100);
+            $usuario->save();
+        
+            // Atualiza a sessão também, se quiser manter o progresso atualizado nela
+            session(['usuarios' => $usuario]);
+        
+            return back()->with('success', 'Progresso atualizado!');
+    }
+
+    public function usuarioRelatorio(){
+        // Verifica se o funcionário está logado na sessão
+        if (!session()->has('usuarios')) {
+            return redirect()->route('usuarioPerfil'); // Redireciona se não estiver logado
+        }
+        
+        $usuarios = session('usuarios'); // Recupera os dados do funcionário da sessão
+        return view('paginas.usuarioRelatorio', compact('usuarios')); // Passa os dados para a view
+    }
+
+
 }//fim da classe

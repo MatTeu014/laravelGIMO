@@ -44,7 +44,7 @@
                     <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
                 </svg>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Perfil</a></li>
+                  <li><a class="dropdown-item" href="{{ route('usuariosloginrelatorio') }}">Perfil</a></li>
                   <li><a class="dropdown-item" href="/">Sair</a></li>
                 </ul>
               </li>
@@ -146,13 +146,19 @@
 
                    <!-- Botão Editar -->
                   <div class="col-12 d-flex justify-content-center" style="transform: translate(0px, -0px);">
-                    <a href="usuarioHome"><button type="button" class="btn btn-danger" style="width: 100%; border-radius: 30px; font-size: 18px; padding: 12px 24px; background-color: #E5CD59; border-color: #E5CD59;">
-                      Voltar
-                    </button></a>
-                    <a href=""><button type="submit" class="btn btn-danger" style="width: 100%; border-radius: 30px; font-size: 18px; padding: 12px 24px; margin-left: 20%; background-color: #E5CD59; border-color: #E5CD59;">
-                      Editar
-                    </button></a>
-                  </div>
+                      <a href="usuarioPerfil"><button type="button" class="btn btn-danger" style="width: 100%; border-radius: 30px; font-size: 18px; padding: 12px 24px; background-color: #E5CD59; border-color: #E5CD59;">
+                        Voltar
+                      </button></a>
+                      <a href=""><button type="submit" class="btn btn-danger" style="width: 100%; border-radius: 30px; font-size: 18px; padding: 12px 24px; margin-left: 20%; background-color: #E5CD59; border-color: #E5CD59;">
+                        Confirmar
+                      </button></a>
+                      <form method="POST" action="">
+                        @csrf
+                        <a href="{{ route('usuariodesativar') }}"><button type="submit" class="btn btn-danger" style="width: 100%; border-radius: 30px; font-size: 18px; padding: 12px 24px; margin-left: 20%; background-color: #E5CD59; border-color: #E5CD59;">
+                          Desativar Conta
+                        </button></a>
+                      </form>
+                    </div>
 
                 </div>
               </div>

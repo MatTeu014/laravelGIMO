@@ -20,7 +20,7 @@
             <a href="/usuarioAtividades" class="btn btn-danger" style="border: 2px solid black; border-radius: 30px; padding: 12px 10px; font-size: 18px; width: 120px; text-align: center;">Atividades</a>
           </li>
           <li class="nav-item">
-            <a href="/usuarioRelatorio" class="btn btn-danger" style="border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Relatório</a>
+            <a href="{{ route('usuariosloginrelatorio') }}" class="btn btn-danger" style="border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Relatório</a>
           </li>
         </ul>
       </div>
@@ -39,7 +39,7 @@
                   <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
                 </svg>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="/usuarioPerfil">Perfil</a></li>
+                  <li><a class="dropdown-item" href="{{ route('usuarioperfil') }}">Perfil</a></li>
                   <li><a class="dropdown-item" href="/">Sair</a></li>
                 </ul>
               </li>
@@ -51,22 +51,36 @@
   </nav>
 
   <!-- Seção de Conteúdo -->
-    <section class="py-5" style="padding-top: 80px; text-align: center;">
+    <div style=" margin-top: 2%;">
+      <h1 style="text-align: center;">Progresso do Usuário</h1>
+    </div>
+    <section class="py-5" style="padding-top: 80px; text-align: center; height: 50vh;">
         <div class="container" style="margin: auto;">
             <div class="row align-items-center">
 
-                <!-- Texto à esquerda -->
-                <div class="col-md-6">
-                    <h2 class="mb-4">Título da Seção</h2>
-                    <p>Este é um exemplo de seção com texto do lado esquerdo e uma imagem do lado direito. Você pode usar essa estrutura para descrever seu projeto, equipe ou qualquer outro conteúdo relevante.</p>
-                    <p>Adicione quantos parágrafos quiser, ou até botões se preferir. É totalmente personalizável.</p>
-                </div>
+              <!-- Texto à esquerda -->
+              <div class="col-md-6">
+                  <h2 class="mb-4">Título da Seção</h2>
+                  <p>Este é um exemplo de seção com texto do lado esquerdo e uma imagem do lado direito. Você pode usar essa estrutura para descrever seu projeto, equipe ou qualquer outro conteúdo relevante.</p>
+                  <p>Adicione quantos parágrafos quiser, ou até botões se preferir. É totalmente personalizável.</p>
+              </div>
 
-                <!-- Imagem à direita -->
-                <div class="col-md-6 text-center">
-                    <img src="https://via.placeholder.com/500x300" alt="Imagem ilustrativa" class="img-fluid rounded">
-                </div>
-
+              <!-- Conteúdo à direita -->
+              <div class="col-md-6 text-center">
+                <img src="https://via.placeholder.com/500x300" alt="Imagem ilustrativa" class="img-fluid rounded">
+              </div>
+                
+                
+              <h3>Progresso da Atividade de Letras</h3>
+              <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar" style="width: 25%">25%</div>
+              </div>
+              
+              <h3 style="margin-top: 4%;">Progresso da Atividade de Números</h3>
+              <div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar text-bg-success" style="width:{{ $usuarios->progresso }}%">{{ $usuarios->progresso }}%</div>
+              </div>
+              
             </div>
         </div>
     </section>

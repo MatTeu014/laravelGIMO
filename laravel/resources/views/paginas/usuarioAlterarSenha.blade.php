@@ -10,7 +10,7 @@
 
       <!-- BOTÃO LOGIN -->
       <form class="d-flex" role="search">
-        <a href="usuarioLogin" class="btn" style="background-color: white; border: 0px solid black; border-radius: 30px; padding: 6px 17px; font-size: 19px; width: 100px; text-align: center; color: #E5CD59;">LOGIN</a>
+        <a class="btn" style="background-color: white; border: 0px solid black; border-radius: 30px; padding: 6px 17px; font-size: 19px; width: 100px; text-align: center; color: #E5CD59;">ALUNO</a>
       </form>
 
     </div>
@@ -36,7 +36,7 @@
 
         <!-- Botão Cadastrar -->
         <div>
-          <button type="submit" class="btn btn-primary" style="background-color: white; color: #f5e177; border-color: #000000; border-radius: 30px; border-width: 2px; font-weight: bold; font-size: 17px; margin: auto; width: 20%;">Cadastrar</button>
+          <button type="submit" class="btn btn-primary" style="background-color: white; color: #f5e177; border-color: #000000; border-radius: 30px; border-width: 2px; font-weight: bold; font-size: 17px; margin: auto; width: 20%;">Confirmar</button>
         </div>
         <br>
 

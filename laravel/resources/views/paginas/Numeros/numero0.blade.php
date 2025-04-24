@@ -20,7 +20,7 @@
             <a href="/usuarioAtividades" class="btn btn-danger" style="background-color: #34B764;border: 2px solid black; border-radius: 30px; padding: 12px 10px; font-size: 18px; width: 120px; text-align: center;">Atividades</a>
           </li>
           <li class="nav-item">
-            <a href="/usuarioRelatorio" class="btn btn-danger" style="background-color: #34B764; border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Relatório</a>
+            <a href="{{ route('usuariosloginrelatorio') }}" class="btn btn-danger" style="background-color: #34B764; border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Relatório</a>
           </li>
         </ul>
       </div>
@@ -39,7 +39,7 @@
                   <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
                 </svg>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="/usuarioPerfil">Perfil</a></li>
+                  <li><a class="dropdown-item" href="{{ route('usuarioperfil') }}">Perfil</a></li>
                   <li><a class="dropdown-item" href="/">Sair</a></li>
                 </ul>
               </li>
@@ -66,6 +66,7 @@
         <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
         <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
         <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 5"></button>
     </div>
     <div class="carousel-inner">
         <div class="carousel-item active" data-bs-interval="10000">
@@ -80,6 +81,29 @@
         <div class="carousel-item">
             <img src="{{URL::to('/assets/img/num0_4.png')}}" class="d-block w-100" alt="...">
         </div>
+        <div class="carousel-item">
+          <form method="post" action="{{ route('usuarioprogresso') }}">
+          @csrf
+        <div style="position: relative;">
+            <img src="{{ URL::to('/assets/img/final0.png') }}" class="d-block w-100" alt="...">
+            <a href=" {{ ('usuarioprogresso') }}"><button style="
+                background-color: #34B764;
+                border: 2px solid black;
+                border-radius: 30px;
+                padding: 12px 24px;
+                font-size: 18px;
+                text-align: center;
+                position: absolute;
+                top: 85%;
+                left: 50%;
+                transform: translate(-50%, -50%);">
+                Finalizar
+            </button></a>
+        </div>
+        </form>
+      </div>
+
+
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -166,3 +190,5 @@
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
 </x-layout>
+
+

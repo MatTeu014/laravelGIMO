@@ -42,7 +42,7 @@
   </nav>
 
 
-  <section style="height: 700px; width: 100%; background-color: black;">
+  <section style="height: 700px; width: 100%; background-color: white;">
 
   </section>
   

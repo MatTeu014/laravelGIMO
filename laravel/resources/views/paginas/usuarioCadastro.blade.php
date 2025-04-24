@@ -87,15 +87,6 @@
             style="border-style: solid; border-color: #000000; border-width: 2px; border-radius: 26px;">
           <label for="escola">Escola</label>
         </div>
-        <br>
-
-        <h3 style="text-align: center;">Perfil do Usuário:</h3>
-        <select class="form-select" id="perfil" name="perfil" required
-          style="border-style: solid; border-color: #000000; border-width: 2px; border-radius: 26px;">
-          <option selected disabled>Escolha seu Perfil</option>
-          <option value="Aluno">Aluno</option>
-          <option value="Professor">Professor</option>
-        </select>
         <br><br>
 
         <!-- Série/Ano -->
@@ -103,11 +94,11 @@
         <select class="form-select" id="serie" name="serie" required
           style="border-style: solid; border-color: #000000; border-width: 2px; border-radius: 26px;">
           <option selected disabled>Escolha a Série</option>
-          <option value="1">1ª Série</option>
-          <option value="2">2ª Série</option>
-          <option value="3">3ª Série</option>
-          <option value="4">4ª Série</option>
-          <option value="5">5ª Série</option>
+          <option value="1ª Série">1ª Série</option>
+          <option value="2ª Série">2ª Série</option>
+          <option value="3ª Série">3ª Série</option>
+          <option value="4ª Série">4ª Série</option>
+          <option value="5ª Série">5ª Série</option>
         </select>
         <br><br>
 
