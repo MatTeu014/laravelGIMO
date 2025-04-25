@@ -308,9 +308,11 @@ Route::post('/usuarioatualizar', [usuariosController::class, 'usuarioAtualizar']
 
 Route::post('/usuariodesativar', [usuariosController::class, 'usuarioDesativar'])->name('usuariodesativar');
 
-Route::post('/usuarioprogresso', [usuariosController::class, 'usuarioProgresso'])->name('usuarioprogresso');
+Route::post('/usuarioaumentarprogressonumeros', [usuariosController::class, 'usuarioAumentarProgressoNumeros'])->name('usuarioaumentarprogressonumeros');
 
-Route::get('/usuariosloginrelatorio', [App\Http\Controllers\usuariosController::class, 'usuarioRelatorio'])->name('usuariosloginrelatorio');
+Route::get('/usuariorelatorionumeros', [App\Http\Controllers\usuariosController::class, 'usuarioRelatorioNumeros'])->name('usuariorelatorionumeros');
+
+Route::post('/usuarioaumentarprogressoletras', [usuariosController::class, 'usuarioAumentarProgressoLetras'])->name('usuarioaumentarprogressoletras');
 
 
 //Funções Adms
