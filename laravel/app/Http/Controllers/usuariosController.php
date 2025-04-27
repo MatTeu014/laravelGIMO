@@ -91,9 +91,9 @@ class usuariosController extends Controller{
     public function usuarioAtualizar(Request $request){
         // Verifica se o funcionário está logado na sessão
         if (!session()->has('usuarios')) {
-            
+
         }
-        
+
         // Validação dos dados recebidos
         $request->validate([
             'nome' => 'required|string|max:255',
@@ -105,10 +105,10 @@ class usuariosController extends Controller{
             'serie' => 'required|string',
             'turma' => 'required|string',
         ]);
-        
+
         // Recupera os dados do funcionário da sessão
         $usuarios = session('usuarios');
-        
+
         // Atualiza as informações do funcionário
         $usuarios->update([
             'nome' => $request->nome,
@@ -120,10 +120,10 @@ class usuariosController extends Controller{
             'serie' => $request->serie,
             'turma' => $request->turma,
         ]);
-        
+
         // Atualiza a sessão com os novos dados do funcionário
         session(['usuarios' => $usuarios]);
-        
+
         // Redireciona para a página de homeLogado ou outra página que desejar
         return redirect('usuarioperfil');
     }

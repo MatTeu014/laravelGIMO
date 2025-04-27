@@ -379,3 +379,18 @@ Route::get('/admsperfil', [admsController::class, 'admsPerfil'])->name('admsPerf
 Route::get('/admseditar', [App\Http\Controllers\admsController::class, 'admsEditar2'])->name('admseditar');
 
 Route::post('/admsatualizar', [admsController::class, 'admsAtualizar2'])->name('admsatualizar');
+
+
+//Funções Professores
+
+Route::get('/professorcadastrar',[App\Http\Controllers\professorController::class, 'professorCadastrar'])->name('professorcadastrar');
+
+Route::get('/professorlogin',[App\Http\Controllers\professorController::class, 'professorLogin'])->name('professorlogin');
+
+Route::get('/professorperfil',[App\Http\Controllers\professorController::class, 'professorPerfil'])->name('professorperfil');
+
+Route::get('/professoreditar2',[App\Http\Controllers\professorController::class, 'professorEditar2'])->name('professoreditar2');
+
+Route::post('/professoratualizar2',[App\Http\Controllers\professorController::class, 'professorAtualizar2'])->name('professoratualizar2');
+
+Route::get('/professorturmas',[App\Http\Controllers\professorController::class, 'professorTurmas'])->name('professorturmas');
