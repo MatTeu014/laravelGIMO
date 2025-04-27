@@ -20,7 +20,7 @@
             <a href="/usuarioAtividades" class="btn btn-danger" style="background-color: #4782DA; border: 2px solid black; border-radius: 30px; padding: 12px 10px; font-size: 18px; width: 120px; text-align: center;">Atividades</a>
           </li>
           <li class="nav-item">
-            <a href="{{ route('usuariorelatorionumeros') }}" class="btn btn-danger" style="background-color: #4782DA; border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Relatório</a>
+            <a href="{{ route('usuariorelatorio') }}" class="btn btn-danger" style="background-color: #4782DA; border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Relatório</a>
           </li>
         </ul>
       </div>
@@ -73,11 +73,11 @@
             <img src="{{URL::to('/assets/img/letraU_3.png')}}" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
-        <form method="post" action="{{ route('usuarioaumentarprogressoletras') }}">
+        <form method="post" action="{{ route('usuarioaumentarprogressoletrau') }}">
         @csrf
         <div style="position: relative;">
             <img src="{{ URL::to('/assets/img/finalU.png') }}" class="d-block w-100" alt="...">
-            <button style="
+            <button @if(session('usuarios')->botaoU) disabled @endif type="submit" style="
                 background-color: #4782DA;
                 border: 2px solid black;
                 border-radius: 30px;

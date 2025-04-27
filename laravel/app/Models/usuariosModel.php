@@ -11,5 +11,5 @@ class usuariosModel extends Model
     use HasFactory;
     protected $table = 'usuarios'; //Nome da Tabela
     
-    protected $fillable = ['nome', 'sobrenome', 'email', 'senha','idade','escola','serie','progressonumeros','progressoletras','situacao'];
+    protected $fillable = ['nome', 'sobrenome', 'email', 'senha','idade','escola','serie','progressonumeros','progressoletras','situacao','turma'];
 }//Fim da classe Model

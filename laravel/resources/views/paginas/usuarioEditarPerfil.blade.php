@@ -23,7 +23,7 @@
             style="background-color: #E5CD59; border: 2px solid black; border-radius: 30px; padding: 12px 10px; font-size: 18px; width: 120px; text-align: center;">Atividades</a>
           </li>
           <li class="nav-item">
-            <a href="{{ route('usuariorelatorionumeros') }}" class="btn btn-danger"
+            <a href="{{ route('usuariorelatorio') }}" class="btn btn-danger"
             style="background-color: #E5CD59; border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Relatório</a>
           </li>
         </ul>
@@ -44,7 +44,7 @@
                     <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
                 </svg>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="{{ route('usuariorelatorionumeros') }}">Perfil</a></li>
+                  <li><a class="dropdown-item" href="{{ route('usuarioperfil') }}">Perfil</a></li>
                   <li><a class="dropdown-item" href="/">Sair</a></li>
                 </ul>
               </li>
@@ -55,9 +55,9 @@
     </div>
   </nav>
 
-  <form action="{{ route('usuarioatualizar') }}" method="POST">
-      @csrf
-      <section class="py-5" style="padding-top: 80px;"> <!-- Ajuste o padding-top para evitar sobreposição -->
+  <form method="POST" action="{{ route('usuarioatualizar') }}">
+    @csrf
+  <section class="py-5" style="padding-top: 80px;"> <!-- Ajuste o padding-top para evitar sobreposição -->
         <div class="container">
           <div class="row align-items-center">
 
@@ -69,7 +69,7 @@
 
                   <!-- Input nome -->
                   <div class="col-md-6">
-                    <h3 style="text-align: center;">Nome:</h3>
+                    <h3 style="text-align: center;">Novo Nome:</h3>
                     <div class="form-floating mb-3">
                       <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome"  style="border-style: solid; border-color: #000000; border-width: 2px; border-radius: 26px;" value="{{ $usuarios->nome }}">
                       <label for="nome">Nome</label>
@@ -78,7 +78,7 @@
 
                   <!-- Input sobrenome -->
                   <div class="col-md-6">
-                    <h3 style="text-align: center;">Sobrenome:</h3>
+                    <h3 style="text-align: center;">Novo Sobrenome:</h3>
                     <div class="form-floating mb-3">
                       <input type="text" class="form-control" id="sobrenome" name="sobrenome" placeholder="Digite seu sobrenome"  style="border-style: solid; border-color: #000000; border-width: 2px; border-radius: 26px;" value="{{ $usuarios->sobrenome }}">
                       <label for="sobrenome">Sobrenome</label>
@@ -87,7 +87,7 @@
 
                   <!-- Input e-mail -->
                   <div class="col-md-6">
-                    <h3 style="text-align: center;">E-mail:</h3>
+                    <h3 style="text-align: center;">Novo E-mail:</h3>
                     <div class="form-floating mb-3">
                       <input type="email" class="form-control" id="email" name="email" placeholder="nome@exemplo.com"  style="border-style: solid; border-color: #000000; border-width: 2px; border-radius: 26px;" value="{{ $usuarios->email }}">
                       <label for="email">E-mail</label>
@@ -96,7 +96,7 @@
 
                   <!-- Input senha -->
                   <div class="col-md-6">
-                    <h3 style="text-align: center;">Senha:</h3>
+                    <h3 style="text-align: center;">Nova Senha:</h3>
                     <div class="form-floating mb-3">
                       <input type="text" class="form-control" id="senha" name="senha" placeholder="Senha"  style="border-style: solid; border-color: #000000; border-width: 2px; border-radius: 26px;" value="{{ $usuarios->senha }}">
                       <label for="senha">Senha</label>
@@ -105,7 +105,7 @@
 
                   <!-- Input idade -->
                   <div class="col-md-6">
-                    <h3 style="text-align: center;">Idade:</h3>
+                    <h3 style="text-align: center;">Nova Idade:</h3>
                     <div class="form-floating mb-3">
                       <input type="text" class="form-control" id="idade" name="idade" placeholder="Idade"  style="border-style: solid; border-color: #000000; border-width: 2px; border-radius: 26px;" value="{{ $usuarios->idade }}">
                       <label for="idade">Idade</label>
@@ -114,28 +114,30 @@
 
                   <!-- Input escola -->
                   <div class="col-md-6">
-                    <h3 style="text-align: center;">Escola:</h3>
+                    <h3 style="text-align: center;">Nova Escola:</h3>
                     <div class="form-floating mb-3">
                       <input type="text" class="form-control" id="escola" name="escola" placeholder="Nome da escola"  style="border-style: solid; border-color: #000000; border-width: 2px; border-radius: 26px;" value="{{ $usuarios->escola }}">
                       <label for="escola">Escola</label>
                     </div>
                   </div>
 
-                  <!-- Select Perfil -->
+                  <!-- Turma -->
                   <div class="col-md-6">
-                    <h3 style="text-align: center;">Perfil:</h3>
-                    <select class="form-select mb-3" name="perfil" style="border-style: solid; border-color: #000000; border-width: 2px; border-radius: 26px;">
-                      <option selected>{{ $usuarios->perfil}}</option>
-                      <option value="Aluno">Aluno</option>
-                      <option value="Professor">Professor</option>
+                    <h3 style="text-align: center;">Nova Turma:</h3>
+                    <select class="form-select" id="turma" name="turma" style="border-style: solid; border-color: #000000; border-width: 2px; border-radius: 26px;">
+                      <option selected disabled>Escolha a nova Turma</option>
+                      <option value="Turma 1">Turma 1</option>
+                      <option value="Turma 2">Turma 2</option>
+                      <option value="Turma 3">Turma 3</option>
+                      <option value="Turma 4">Turma 4</option>
                     </select>
                   </div>
 
                   <!-- Select série/ano -->
                   <div class="col-md-6">
-                    <h3 style="text-align: center;">Série/Ano:</h3>
+                    <h3 style="text-align: center;">Nova Série:</h3>
                     <select class="form-select mb-3" name="serie" style="border-style: solid; border-color: #000000; border-width: 2px; border-radius: 26px;">
-                      <option selected>{{ $usuarios->serie }}</option>
+                      <option selected disabled>Escolha a nova Série</option>
                       <option value="1ª Série">1ª Série</option>
                       <option value="2ª Série">2ª Série</option>
                       <option value="3ª Série">3ª Série</option>
@@ -146,18 +148,13 @@
 
                    <!-- Botão Editar -->
                   <div class="col-12 d-flex justify-content-center" style="transform: translate(0px, -0px);">
-                      <a href="usuarioPerfil"><button type="button" class="btn btn-danger" style="width: 100%; border-radius: 30px; font-size: 18px; padding: 12px 24px; background-color: #E5CD59; border-color: #E5CD59;">
+                      <a><button type="submit" class="btn btn-danger" style="width: 100%; border-radius: 30px; font-size: 18px; padding: 12px 24px; background-color: #E5CD59; border-color: #E5CD59;">
                         Voltar
                       </button></a>
-                      <a href=""><button type="submit" class="btn btn-danger" style="width: 100%; border-radius: 30px; font-size: 18px; padding: 12px 24px; margin-left: 20%; background-color: #E5CD59; border-color: #E5CD59;">
+                      
+                      <a><button type="submit" class="btn btn-danger" style="width: 100%; border-radius: 30px; font-size: 18px; padding: 12px 24px; margin-left: 20%; background-color: #E5CD59; border-color: #E5CD59;">
                         Confirmar
                       </button></a>
-                      <form method="POST" action="">
-                        @csrf
-                        <a href="{{ route('usuariodesativar') }}"><button type="submit" class="btn btn-danger" style="width: 100%; border-radius: 30px; font-size: 18px; padding: 12px 24px; margin-left: 20%; background-color: #E5CD59; border-color: #E5CD59;">
-                          Desativar Conta
-                        </button></a>
-                      </form>
                     </div>
 
                 </div>

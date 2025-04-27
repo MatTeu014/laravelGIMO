@@ -20,7 +20,7 @@
             <a href="usuarioAtividades" class="btn btn-danger" style="border: 2px solid black; border-radius: 30px; padding: 12px 10px; font-size: 18px; width: 120px; text-align: center;">Atividades</a>
           </li>
           <li class="nav-item">
-            <a href="{{ route('usuariorelatorionumeros') }}" class="btn btn-danger" style="border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Relatório</a>
+            <a href="{{ route('usuariorelatorio') }}" class="btn btn-danger" style="border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Relatório</a>
           </li>
         </ul>
       </div>
@@ -60,7 +60,7 @@
 
                 <div class="card" style="width: 24rem; margin-left: 10%; height: 35vh; border-color: white;">
                     <div class="card-body">
-                      <a href="usuarioAlfabeto"><button style="font-size: 150px; border-radius: 30px; border-color: #4782da; border-style: solid; background-color: white;">ABC</button></a>
+                        <a href="usuarioAlfabeto"><button style="font-size: 150px; border-radius: 30px; border-color: #4782da; border-style: solid; background-color: white;">ABC</button></a>
                     </div>
                 </div>
                 

@@ -20,7 +20,7 @@
             <a href="/usuarioAtividades" class="btn btn-danger" style="border: 2px solid black; border-radius: 30px; padding: 12px 10px; font-size: 18px; width: 120px; text-align: center;">Atividades</a>
           </li>
           <li class="nav-item">
-            <a href="{{ route('usuariorelatorionumeros') }}" class="btn btn-danger" style="border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Relatório</a>
+            <a href="{{ route('usuariorelatorio') }}" class="btn btn-danger" style="border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Relatório</a>
           </li>
         </ul>
       </div>
@@ -54,7 +54,7 @@
     <div style=" margin-top: 2%;">
       <h1 style="text-align: center;">Progresso do Usuário</h1>
     </div>
-    <section class="py-5" style="padding-top: 80px; text-align: center; height: 70vh;">
+    <section class="py-5" style="padding-top: 80px; text-align: center; height: 90vh;">
         <div class="container" style="margin: auto;">
             <div class="row align-items-center">
 
@@ -75,11 +75,26 @@
               <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                 <div class="progress-bar" style="width: {{ $usuarios->progressoletras }}%">{{ $usuarios->progressoletras + 1.2 }}%</div>
               </div>
-              
+
+        
+            <form action="{{ route('usuarioresetarprogressoletras') }}" method="POST"> 
+                @csrf
+                <button type="progress" class="btn btn-danger" style="margin-top: 2%; width: 30%; border-radius: 30px; font-size: 18px; padding: 12px 24px; background-color: #E5CD59; border-color: #E5CD59;">
+                    Resetar Progresso das Letras
+                </button>
+            </form>
+
               <h3 style="margin-top: 4%;">Progresso da Atividade de Números</h3>
               <div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                 <div class="progress-bar text-bg-success" style="width:{{ $usuarios->progressonumeros }}%">{{ $usuarios->progressonumeros + 0.01 }}%</div>
               </div>
+
+                <form action="{{ route('usuarioresetarprogressonumeros') }}" method="POST"> 
+                    @csrf
+                    <button type="submit" class="btn btn-danger" style="margin-top: 2%; width: 30%; border-radius: 30px; font-size: 18px; padding: 12px 24px; background-color: #E5CD59; border-color: #E5CD59;">
+                      Resetar Progresso dos Números
+                    </button>
+                </form>
               
             </div>
         </div>
