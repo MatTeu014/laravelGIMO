@@ -60,14 +60,15 @@
 
               <!-- Texto à esquerda -->
               <div class="col-md-6">
-                  <h2 class="mb-4">Título da Seção</h2>
-                  <p>Este é um exemplo de seção com texto do lado esquerdo e uma imagem do lado direito. Você pode usar essa estrutura para descrever seu projeto, equipe ou qualquer outro conteúdo relevante.</p>
-                  <p>Adicione quantos parágrafos quiser, ou até botões se preferir. É totalmente personalizável.</p>
+                  <h2 class="mb-4">Relatório !</h2>
+                  <p>•	Bem-vindo a área dos relatórios. Aqui você poderá consultar seu desenvolvimento das atividades do site, aparecendo a sua porcentagem de progresso das atividades, tanto das letras do alfabeto e dos números.</p>
+                  <p>•	Assim que acabar e completar os 100% em ambas as áreas, se quiser refazer seu progresso, só clicar em Resetar Progresso.</p>
+                  <p>•	Desejamos boa sorte em seus estudos e que se divirta aprendendo!</p>
               </div>
 
               <!-- Conteúdo à direita -->
               <div class="col-md-6 text-center">
-                <img src="https://via.placeholder.com/500x300" alt="Imagem ilustrativa" class="img-fluid rounded">
+                <img src="{{URL::to('/assets/img/img_relatorio.png')}}" alt="Imagem ilustrativa" class="img-fluid rounded" style="width: 400px;">
               </div>
                 
                 

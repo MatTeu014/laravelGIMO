@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admsController;
 use App\Http\Controllers\usuariosController;
+use App\Http\Controllers\escolasController;
+use App\Http\Controllers\seriesController;
 
 //Home
 Route::get('/', function () {
@@ -104,7 +106,28 @@ Route::get('admEditarPerfil', function () {
 });
 
 
+//escola
 
+
+Route::get('escolaCadastro', function () {
+    return view('paginas.escolaCadastro');
+});
+
+Route::get('escolaCadastroSeries', function () {
+    return view('paginas.escolaCadastroSeries');
+});
+
+Route::get('escolaCadastroTurmas', function () {
+    return view('paginas.escolaCadastroTurmas');
+});
+
+Route::get('escolaLogin', function () {
+    return view('paginas.escolaLogin');
+});
+
+Route::get('escolaHome', function () {
+    return view('paginas.escolaHome');
+});
 
 //professor
 
@@ -135,6 +158,28 @@ Route::get('professorPerfil', function () {
 Route::get('professorEditarPerfil', function () {
     return view('paginas.professorEditarPerfil');
 });
+
+Route::get('professorSerie1', function () {
+    return view('paginas.professorSerie1');
+});
+
+Route::get('professorSerie2', function () {
+    return view('paginas.professorSerie2');
+});
+
+Route::get('professorSerie3', function () {
+    return view('paginas.professorSerie2');
+});
+
+Route::get('professorSerie4', function () {
+    return view('paginas.professorSerie2');
+});
+
+Route::get('professorSerie5', function () {
+    return view('paginas.professorSerie2');
+});
+
+
 
 
 
@@ -306,8 +351,6 @@ Route::get('/usuarioeditar', [App\Http\Controllers\usuariosController::class, 'u
 
 Route::post('/usuarioatualizar', [App\Http\Controllers\usuariosController::class, 'usuarioAtualizar'])->name('usuarioatualizar');
 
-
-
 Route::post('/usuarioaumentarprogressonumeros', [usuariosController::class, 'usuarioAumentarProgressoNumeros'])->name('usuarioaumentarprogressonumeros');
 
 Route::get('/usuariorelatorio', [App\Http\Controllers\usuariosController::class, 'usuarioRelatorio'])->name('usuariorelatorio');
@@ -394,3 +437,16 @@ Route::get('/professoreditar2',[App\Http\Controllers\professorController::class,
 Route::post('/professoratualizar2',[App\Http\Controllers\professorController::class, 'professorAtualizar2'])->name('professoratualizar2');
 
 Route::get('/professorturmas',[App\Http\Controllers\professorController::class, 'professorTurmas'])->name('professorturmas');
+
+
+
+//Funções Escolas
+
+Route::get('/escolascadastrar',[App\Http\Controllers\escolasController::class, 'escolasCadastrar'])->name('escolascadastrar');
+
+Route::get('/escolaslogin',[App\Http\Controllers\escolasController::class, 'escolasLogin'])->name('escolaslogin');
+
+///Funções Series
+
+Route::get('/seriescadastrar',[App\Http\Controllers\seriesController::class, 'seriesCadastrar'])->name('seriescadastrar');
+

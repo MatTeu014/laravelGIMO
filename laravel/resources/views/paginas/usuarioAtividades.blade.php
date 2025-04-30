@@ -52,7 +52,12 @@
 
   <!-- Seção de Conteúdo -->
 
-   <div style="text-align: center; margin-top: 2%;"><h1>Escolha uma Atividade</h1></div>
+   <div style="text-align: center; margin-top: 2%;"><h1>Escolha uma Atividade</h1>
+        <p>Você agora está entrando na área de atividades, fique atento nos passos a passo da execução das letras e números,<br> 
+          siga as orientações de cada passo, sempre prestando muita atenção, e assim que acabar cada letra ou número <br> 
+          não esqueça de clicar no botão <b>FINALIZAR</b> de cada atividade, para computar seu rendimento. <br>
+          Boa sorte, e tomara que se divirta bastante, enquanto aprende!</p>
+    </div>
 
     <section class="py-5" style="padding-top: 80px; text-align: center;">
         <div class="container" style="margin: auto;">

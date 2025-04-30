@@ -64,7 +64,7 @@
 
         <!-- Imagem à direita -->
         <div class="col-md-6 text-center">
-          <img src="https://via.placeholder.com/500x300" alt="Imagem ilustrativa" class="img-fluid rounded">
+          <img src="{{URL::to('/assets/img/img_home.png')}}" alt="Imagem ilustrativa" class="img-fluid rounded">
         </div>
 
       </div>

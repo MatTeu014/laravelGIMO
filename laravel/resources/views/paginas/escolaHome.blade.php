@@ -1,16 +1,25 @@
-<x-layout titulo="Home Administrador">
+<x-layout titulo="Home Escola">
 	<nav class="navbar navbar-expand-lg sticky-top"
-		style="background-color:rgb(245, 101, 58); padding-top: 20px; padding-bottom: 20px;">
+		style="background-color: rgb(119, 81, 31); padding-top: 20px; padding-bottom: 20px;">
 		<div class="container-fluid d-flex justify-content-between align-items-center">
 
 			<!-- LOGO (Imagem responsiva) -->
-			<a class="navbar-brand" href="/professorHome">
+			<a class="navbar-brand" href="escolaHome">
 				<img src="{{URL::to('/assets/img/logo_gimo.png')}}" alt="Logo" style="width: 100px; height: auto;">
 			</a>
 
 			<!-- BOTÕES CENTRAIS -->
 			<div class="d-flex justify-content-center flex-grow-1" style="padding-top:35px;">
 				<ul class="navbar-nav d-flex flex-row gap-3">
+
+					<li class="nav-item">
+						<a href="/usuarioHome" class="btn btn-danger"
+							style=" background-color: #4782DA; border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Home</a>
+						<a href="/escolaCadastroSeries" class="btn btn-danger"
+							style=" background-color: #4782DA; border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Séries</a>
+						<a href="/escolaCadastroTurmas" class="btn btn-danger"
+							style=" background-color: #4782DA; border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Turmas</a>
+					</li>
 				</ul>
 			</div>
 
@@ -28,14 +37,15 @@
 						<ul class="navbar-nav">
 							<li class="nav-item dropdown">
 								<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor"
-									class="bi bi-person-circle" viewBox="0 0 16 16" class="nav-link dropdown-toggle" href="#"
-									role="button" data-bs-toggle="dropdown" aria-expanded="false" style="margin-right: 100px;">
+									class="bi bi-person-circle" viewBox="0 0 16 16" class="nav-link dropdown-toggle"
+									href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+									style="margin-right: 100px;">
 									<path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
 									<path fill-rule="evenodd"
 										d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
 								</svg>
 								<ul class="dropdown-menu">
-									<li><a class="dropdown-item" href="{{ route('professorperfil') }}">Perfil</a></li>
+									<li><a class="dropdown-item" href="">Perfil</a></li>
 									<li><a class="dropdown-item" href="/">Sair</a></li>
 								</ul>
 							</li>
@@ -46,70 +56,9 @@
 		</div>
 	</nav>
 
-	<h1 style="text-align: center; margin-top: 2%;">Escolha uma Série</h1>
 
-	<section class="py-5" style="padding-top: 80px; text-align: center;">
-		<div class="container" style="margin: auto;">
-			<div class="row align-items-center">
+	<section style="height: 700px; width: 100%; background-color: white;">
 
-
-
-				<div class="container" style="margin: auto;">
-					<div class="row align-items-center">
-
-						<select>
-							<option></option>
-						</select>
-						
-						<div class="card" style="width: 24rem; height: 35vh; border-color: white;">
-							<div class="card-body">
-								<a href="professorSerie1"><button value="Serie1"
-										style="font-size: 50px; border-radius: 30px; border-color: rgb(245, 101, 58); border-style: solid; background-color: white;">1ª
-										Série</button></a>
-							</div>
-						</div>
-
-						<div class="card" style="width: 24rem; height: 35vh; border-color: white;">
-							<div class="card-body">
-								<a href="professorSerie2"><button value="Serie2"
-										style="font-size: 50px; border-radius: 30px; border-color: rgb(245, 101, 58); border-style: solid; background-color: white;">2ª
-										Série</button></a>
-							</div>
-						</div>
-
-						<div class="card" style="width: 24rem; height: 35vh; border-color: white;">
-							<div class="card-body">
-								<a href="professorSerie3"><button value="Serie3"
-										style="font-size: 50px; border-radius: 30px; border-color: rgb(245, 101, 58); border-style: solid; background-color: white;">3ª
-										Série</button></a>
-							</div>
-						</div>
-
-						<div class="card" style="width: 24rem; height: 35vh; border-color: white;">
-							<div class="card-body">
-								<a href="professorSerie4"><button value="Serie4"
-										style="font-size: 50px; border-radius: 30px; border-color: rgb(245, 101, 58); border-style: solid; background-color: white;">4ª
-										Série</button></a>
-							</div>
-						</div>
-
-						<div class="card" style="width: 24rem; height: 35vh; border-color: white;">
-							<div class="card-body">
-								<a href="professorSerie5"><button value="Serie5"
-										style="font-size: 50px; border-radius: 30px; border-color: rgb(245, 101, 58); border-style: solid; background-color: white;">5ª
-										Série</button></a>
-							</div>
-						</div>
-
-
-
-					</div>
-				</div>
-
-
-
-			</div>
-		</div>
 	</section>
 
 

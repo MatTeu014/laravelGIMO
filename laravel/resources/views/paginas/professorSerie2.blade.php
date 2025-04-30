@@ -1,19 +1,15 @@
 <x-layout titulo="Home Administrador">
-  <nav class="navbar navbar-expand-lg sticky-top" style="background-color: #BDBDBD; padding-top: 20px; padding-bottom: 20px;">
+  <nav class="navbar navbar-expand-lg sticky-top" style="background-color:rgb(245, 101, 58); padding-top: 20px; padding-bottom: 20px;">
     <div class="container-fluid d-flex justify-content-between align-items-center">
 
       <!-- LOGO (Imagem responsiva) -->
-      <a class="navbar-brand" href="/admHome">
+      <a class="navbar-brand" href="/professorHome">
         <img src="{{URL::to('/assets/img/logo_gimo.png')}}" alt="Logo" style="width: 100px; height: auto;">
       </a>
 
       <!-- BOTÕES CENTRAIS -->
       <div class="d-flex justify-content-center flex-grow-1" style="padding-top:35px;">
         <ul class="navbar-nav d-flex flex-row gap-3">
-
-          <li class="nav-item">
-            <a href="/usuarioHome" class="btn btn-danger" style=" background-color: #4782DA; border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Home</a>
-          </li>
         </ul>
       </div>
 
@@ -33,8 +29,7 @@
                   <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
                 </svg>
                 <ul class="dropdown-menu">
-                  <li><a  class="dropdown-item" href="{{ route('admsPerfil') }}">Perfil</a></li>
-                  <li><a class="dropdown-item" href="admCadastro">Cadastrar</a></li>
+                  <li><a  class="dropdown-item" href="{{ route('professorperfil') }}">Perfil</a></li>
                   <li><a class="dropdown-item" href="/">Sair</a></li>
                 </ul>
               </li>
@@ -45,10 +40,48 @@
     </div>
   </nav>
 
+  <h1 style="text-align: center; margin-top: 2%;">Escolha uma turma</h1>
 
-  <section style="height: 700px; width: 100%; background-color: white;">
+  <section class="py-5" style="padding-top: 80px; text-align: center;">
+        <div class="container" style="margin: auto;">
+            <div class="row align-items-center">
 
-  </section>
+                <form action="professorturmas" method="get">
+
+                <div class="container" style="margin: auto;">
+                    <div class="row align-items-center">
+
+                <div class="card" style="width: 24rem; height: 35vh; border-color: white;">
+                    <div class="card-body">
+                        <a href="professorSerie1"><button value="Turma 1" style="font-size: 50px; border-radius: 30px; border-color: rgb(245, 101, 58); border-style: solid; background-color: white;">Turma 1</button></a>
+                    </div>
+                </div>
+                
+                <div class="card" style="width: 24rem; height: 35vh; border-color: white;">
+                  <div class="card-body">
+                    <a href="usuarioNumeros"><button value="Turma 2" style="font-size: 50px; border-radius: 30px; border-color: rgb(245, 101, 58); border-style: solid; background-color: white;">Turma 2</button></a>
+                  </div>
+                </div>
+
+                <div class="card" style="width: 24rem; height: 35vh; border-color: white;">
+                  <div class="card-body">
+                    <a href="usuarioNumeros"><button value="Turma 3" style="font-size: 50px; border-radius: 30px; border-color: rgb(245, 101, 58); border-style: solid; background-color: white;">Turma 3</button></a>
+                  </div>
+                </div>
+
+                <div class="card" style="width: 24rem; height: 35vh; border-color: white;">
+                  <div class="card-body">
+                    <a href="usuarioNumeros"><button value="Turma 4" style="font-size: 50px; border-radius: 30px; border-color: rgb(245, 101, 58); border-style: solid; background-color: white;">Turma 4</button></a>
+                  </div>
+                </div>
+            </div>
+        </div>
+
+                </form>
+
+            </div>
+        </div>
+    </section>
   
 
 <!-- Footer -->

@@ -119,18 +119,27 @@ class professorController extends Controller{
         return redirect('professoresperfil');
     }
 
+    public function professorSeries(Request $request){
+        // Verifica se o funcionário está logado na sessão
+        if (!session()->has('professores')) {
+        }
+
+
+    }
+
     public function professorTurmas(Request $request){
         // Verifica se o funcionário está logado na sessão
         if (!session()->has('professores')) {
         }
         
-        $valor = $request->input('turma');
 
-        $turmas = usuariosModel::where('turma',$valor)->get();
+        $serie = $request->input('serie');
+
+        $turmas = usuariosModel::where('turma',$serie)->get();
 
 
         // Exibe o formulário de edição, passando os dados do funcionário
-        return view('paginas.professorTurmas', compact('turmas'));
+        return view('paginas.professorSeries', compact('turmas'));
     }
 
 }//fim da classe
