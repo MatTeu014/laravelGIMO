@@ -1,4 +1,4 @@
-<x-layout titulo="Cadastro de Professor">    
+<x-layout titulo="Cadastro de Turmas do Professor">    
 
   <nav class="navbar navbar-expand-lg" style="background-color: rgb(245, 101, 58); padding-top: 20px; padding-bottom: 20px;">
       <div class="container-fluid d-flex justify-content-between align-items-center">
@@ -35,58 +35,14 @@
     @endif
       <form action="/professorcadastrar" method="GET"> <!-- Ajuste o action se necessário -->
 
-        <!-- Nome -->
-        <h3 style="text-align: center;">Nome:</h3>
-        <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome" required
-            style="border-style: solid; border-color: #000000; border-width: 2px; border-radius: 26px;">
-          <label for="nome">Nome</label>
-        </div>
-        <br>
 
-        <!-- Sobrenome -->
-        <h3 style="text-align: center;">Sobrenome:</h3>
+        <!-- Turmas -->
+        <h3 style="text-align: center;">Turma:</h3>
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="sobrenome" name="sobrenome" placeholder="Digite seu sobrenome" required
-            style="border-style: solid; border-color: #000000; border-width: 2px; border-radius: 26px;">
-          <label for="sobrenome">Sobrenome</label>
-        </div>
-        <br>
-        
-        <!-- E-mail -->
-        <h3 style="text-align: center;">E-mail:</h3>
-        <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="email" name="email" placeholder="Digite seu e-mail" required
-            style="border-style: solid; border-color: #000000; border-width: 2px; border-radius: 26px;">
-          <label for="email">E-mail</label>
-        </div>
-        <br>
-
-        <!-- Senha -->
-        <h3 style="text-align: center;">Senha:</h3>
-        <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="senha" name="senha" placeholder="Digite sua senha" required
-            style="border-style: solid; border-color: #000000; border-width: 2px; border-radius: 26px;">
-          <label for="senha">Senha</label>
-        </div>
-        <br>
-
-        <!-- Idade -->
-        <h3 style="text-align: center;">Idade:</h3>
-        <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="idade" name="idade" placeholder="Digite sua idade" required
-            style="border-style: solid; border-color: #000000; border-width: 2px; border-radius: 26px;">
-          <label for="idade">Idade</label>
-        </div>
-        <br>
-
-        <!-- Escola -->
-        <h3 style="text-align: center;">Escola:</h3>
-        <div class="form-floating mb-3">
-          <select name="escola" class="form-select" aria-label="Default select example" required style="border-style: solid; border-color: #000000; border-width: 2px; border-radius: 26px;">
-            <option selected Disabled>Escolha a Escola</option>
-            @foreach($escolas as $escola)
-            <option>{{$escola->nome}}</option>
+          <select name="turma" class="form-select" aria-label="Default select example" required style="border-style: solid; border-color: #000000; border-width: 2px; border-radius: 26px;">
+            <option selected Disabled>Escolha uma Turma</option>
+            @foreach($turmas as $turma)
+            <option>{{$turma->nome}}</option>
             @endforeach
           </select>
           <label for="escola">Escola</label>

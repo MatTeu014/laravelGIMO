@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\escolasModel;
+use App\Models\seriesModel;
+use App\Models\turmasModel;
+use App\Models\usuariosModel;
 
 class escolasController extends Controller{
     
@@ -53,5 +56,7 @@ class escolasController extends Controller{
             return redirect('escolaLogin')->with('failed', 'Nome ou senha inválido');
         }
     }
+
+
 
 }//fim da classe

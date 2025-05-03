@@ -8,14 +8,6 @@ use App\Models\seriesModel;
 class seriesController extends Controller{
     
     public function seriesCadastrar(Request $request){
-
-        $nome = $request->input('nome');
-
-        // Verifica se o e-mail já está cadastrado
-        $nomeExistente = seriesModel::where('nome', $nome)->first();
-        if ($nomeExistente) {
-            return redirect('escolaCadastroSeries')->with('failed', 'Série já cadastrada!');
-        }
         
         $escolas = session('id');
 
@@ -28,6 +20,15 @@ class seriesController extends Controller{
         $model->save();
     
         return redirect('escolaCadastroSeries')->with('success', 'Série cadastrada com sucesso!');
+    }
+
+    public function seriesConsultar(Request $request){
+        
+        $idEscola = session('id');
+
+        $series = seriesModel::where('idEscolaFK', $idEscola)->get();
+    
+        return view('paginas.escolaCadastroTurmas', compact('series'));
     }
 
 }//fim da classe

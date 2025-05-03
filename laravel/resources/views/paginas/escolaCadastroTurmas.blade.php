@@ -36,7 +36,7 @@
                     {{ session('failed') }}
                 </div>
             @endif
-            <form action="/usuarioscadastrar" method="GET"> <!-- Ajuste o action se necessário -->
+            <form action="turmascadastrar" method="GET"> <!-- Ajuste o action se necessário -->
 
                 <!-- Nome -->
                 <h3 style="text-align: center;">Nome da Turma:</h3>
@@ -50,14 +50,19 @@
 
                 <!-- Série -->
                 <h3 style="text-align: center;">De qual série essa turma faz parte?:</h3>
-                    <select class="form-select" aria-label="Default select example" required style="border-style: solid; border-color: #000000; border-width: 2px; border-radius: 26px;">
-                        <option selected>Nome da Série</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                    @csrf
+                    <select name="serie" class="form-select" aria-label="Default select example" required style="border-style: solid; border-color: #000000; border-width: 2px; border-radius: 26px;">
+                        <option selected Disabled>Escolha a Série</option>
+                        @foreach($series as $serie)
+                        <option>{{$serie->nome}}</option>
+
+                        @endforeach
                     </select>
                 <br>
-
+                <!-- Botão Cadastrar -->
+                <div>
+                    <button type="submit" class="btn" style="background-color: #E5CD59; border-radius: 30px; padding: 6px 17px; font-size: 19px; width: 120px; text-align: center; color: #000000;">Cadastrar</button>
+                </div>
             </form>
         </div>
 
@@ -85,21 +90,17 @@
                 <div class="col-12 col-md-4 mb-4">
                     <h6 class="text-uppercase fw-bold mb-3">Linkedin</h6>
                     <div class="flex-column align-items-start text-center">
-                        <a href="https://www.linkedin.com/in/nome-do-perfil" target="_blank"
-                            class="d-block text-decoration-none text-primary mb-2">
-                            <i class="fab fa-linkedin me-2"></i>https://www.bing.com/searchsdasadadadsa
+                        <a href="https://www.linkedin.com/in/gisele-da-hora-silva-0313811a9/" target="_blank" class="text-decoration-none text-primary mb-2">
+                            <i class="fab fa-linkedin me-2"></i>Gisele da Hora
                         </a>
-                        <a href="https://www.linkedin.com/in/nome-do-perfil" target="_blank"
-                            class="d-block text-decoration-none text-primary mb-2">
-                            <i class="fab fa-linkedin me-2"></i>https://www.bing.com/searchsdasdaasdadas
+                        <a href="https://www.linkedin.com/in/isaac-sena-74ab56224/" target="_blank" class="text-decoration-none text-primary mb-2">
+                            <i class="fab fa-linkedin me-2"></i>Isaac Sena
                         </a>
-                        <a href="https://www.linkedin.com/in/nome-do-perfil" target="_blank"
-                            class="d-block text-decoration-none text-primary mb-2">
-                            <i class="fab fa-linkedin me-2"></i>https://www.bing.com/searchasdadsadsdasd
+                        <a href="https://www.linkedin.com/in/mateus-albuquerque-pavani-934598267/" target="_blank" class="text-decoration-none text-primary mb-2">
+                            <i class="fab fa-linkedin me-2"></i>Mateus Pavani
                         </a>
-                        <a href="https://www.linkedin.com/in/nome-do-perfil" target="_blank"
-                            class="d-block text-decoration-none text-primary mb-2">
-                            <i class="fab fa-linkedin me-2"></i>https://www.bing.com/searchasdadasdsadad
+                        <a href="https://www.linkedin.com/in/ot%C3%A1vio-fidalgo-8448a1217/" target="_blank" class="text-decoration-none text-primary mb-2">
+                            <i class="fab fa-linkedin me-2"></i>Otávio Fidalgo
                         </a>
                     </div>
                 </div>
