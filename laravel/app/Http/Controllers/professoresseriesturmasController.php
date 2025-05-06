@@ -83,7 +83,7 @@ class professoresseriesturmasController extends Controller
         $serie = session('serie');
         $turma = $request->input('turma');
 
-        $alunos = usuariosModel::where('escola', $escola)->where('idSerieFK', $serie)->where('idTurmaFK', $turma)->get();
+        $alunos = usuariosModel::where('idEscolaFK', $escola)->where('idSerieFK', $serie)->where('idTurmaFK', $turma)->get();
 
         Log::info(" dadaad $escola, $serie, $turma");
 

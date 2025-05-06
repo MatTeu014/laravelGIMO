@@ -463,6 +463,8 @@ Route::get('/escolascadastrar',[App\Http\Controllers\escolasController::class, '
 
 Route::get('/escolaslogin',[App\Http\Controllers\escolasController::class, 'escolasLogin'])->name('escolaslogin');
 
+Route::get('/escolasperfil',[App\Http\Controllers\escolasController::class, 'escolasPerfil'])->name('escolasperfil');
+
 
 ///Funções Series
 

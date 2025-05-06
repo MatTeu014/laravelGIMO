@@ -84,10 +84,9 @@ class usuariosController extends Controller
         $model->email = session('email');
         $model->senha = session('senha');
         $model->idade = session('idade');
-        $model->escola = session('idescolaFK');
+        $model->idEscolaFK = session('idescolaFK');
         $model->idSerieFK = session('idserie');
         $model->idturmaFK = $idturma;
-        $model->situacao = "Ativo";
         $model->progressonumeros = 0;
         $model->progressoletras = 0;
         
@@ -155,7 +154,7 @@ class usuariosController extends Controller
             'email' => 'required|string',
             'senha' => 'required|string',
             'idade' => 'required|string',
-            'escola' => 'required|string',
+            'idEscolaFK' => 'required|string',
             'serie' => 'required|string',
             'turma' => 'required|string',
         ]);
@@ -170,7 +169,7 @@ class usuariosController extends Controller
             'email' => $request->email,
             'senha' => $request->senha,
             'idade' => $request->idade,
-            'escola' => $request->escola,
+            'idEscolaFK' => $request->idEscolaFK,
             'serie' => $request->serie,
             'turma' => $request->turma,
         ]);
