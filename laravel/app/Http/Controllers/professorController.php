@@ -71,6 +71,10 @@ class professorController extends Controller{
             session(['professores' => $professores]);
             $idescola = professorModel::where('email', $email)->value('idEscolaFK');
             session(['idescola' => $idescola]);
+
+            $idprofessor = professorModel::where('email', $email)->value('id');
+            session(['idprofessor' => $idprofessor]);
+            Log::info("ID DO PROFESSOR $idprofessor");
             
             // Redirecionar para a página homeLogado
             return redirect('professorHome');

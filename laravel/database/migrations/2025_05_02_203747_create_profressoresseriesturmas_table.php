@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('profressoresseriesturmas', function (Blueprint $table) {
             $table->id('id');
-            $table->integer('idProfessorFK')->unsigned();
-            $table->foreign('idProfessorFK')->references('id')->on('professores');
-            $table->integer('idSerieFK')->unsigned();
-            $table->foreign('idSerieFK')->references('id')->on('series');
-            $table->integer('idTurmaFK')->unsigned();
-            $table->foreign('idTurmaFK')->references('id')->on('turmas');    
+            $table->integer('idProfessorFK')->unsigned()->nullable();
+            $table->foreign('idProfessorFK')->references('id')->on('professores')->nullable();
+            $table->integer('idSerieFK')->unsigned()->nullable();
+            $table->foreign('idSerieFK')->references('id')->on('series')->nullable();
+            $table->integer('idTurmaFK')->unsigned()->nullable();
+            $table->foreign('idTurmaFK')->references('id')->on('turmas')->nullable();    
             $table->timestamps();
         });
     }

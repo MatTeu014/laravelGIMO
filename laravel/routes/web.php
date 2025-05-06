@@ -6,6 +6,7 @@ use App\Http\Controllers\usuariosController;
 use App\Http\Controllers\escolasController;
 use App\Http\Controllers\seriesController;
 use App\Http\Controllers\turmasController;
+use App\Http\Controllers\professoresseriesturmasController;
 
 
 //Home
@@ -472,3 +473,18 @@ Route::get('/seriesconsultar',[App\Http\Controllers\seriesController::class, 'se
 ///Funções Turmas
 
 Route::get('/turmascadastrar',[App\Http\Controllers\turmasController::class, 'turmasCadastrar'])->name('turmascadastrar');
+
+
+
+//ProfessorSeriesTurmas
+
+
+Route::get('/professoresseriesturmascadastrarserie',[App\Http\Controllers\professoresseriesturmasController::class, 'professoresseriesturmasCadastrarSerie'])->name('professoresseriesturmascadastrarserie');
+
+Route::get('/professoresseriesturmacadastrarturma',[App\Http\Controllers\professoresseriesturmasController::class, 'professoresseriesturmaCadastrarTurma'])->name('professoresseriesturmacadastrarturma');
+
+Route::get('/professoresseriesturmaconsultaserie',[App\Http\Controllers\professoresseriesturmasController::class, 'professoresseriesturmaConsultaSerie'])->name('professoresseriesturmaconsultaserie');
+
+Route::get('/professoresseriesturmaconsultaturma',[App\Http\Controllers\professoresseriesturmasController::class, 'professoresseriesturmaConsultaTurma'])->name('professoresseriesturmaconsultaturma');
+
+Route::get('/professoresseriesturmaconsultaalunos',[App\Http\Controllers\professoresseriesturmasController::class, 'professoresseriesturmaConsultaAlunos'])->name('professoresseriesturmaconsultaalunos');
