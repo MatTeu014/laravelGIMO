@@ -19,7 +19,7 @@ return new class extends Migration
             $table->longtext('senha');
             $table->integer('idade');
             $table->integer('idEscolaFK')->unsigned();
-            $table->foreign('idEscolaFK')->references('id')->on('escolas');
+            $table->foreign('idEscolaFK')->references('id')->on('escolas')->OnDelete('cascade');
             $table->integer('idSerieFK')->unsigned()->nullable();
             $table->foreign('idSerieFK')->references('id')->on('series')->nullable();
             $table->integer('idTurmaFK')->unsigned()->nullable();

@@ -169,7 +169,7 @@ class professorController extends Controller{
         session(['professores' => $professores]);
 
         // Redireciona para a página de homeLogado ou outra página que desejar
-        return redirect('professoresperfil');
+        return redirect('professorperfil');
     }
 
     public function professorSeries(Request $request){

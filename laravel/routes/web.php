@@ -132,6 +132,9 @@ Route::get('escolaHome', function () {
     return view('paginas.escolaHome');
 });
 
+Route::get('escolaEditarPerfil', function () {
+    return view('paginas.escolaEditarPerfil');
+});
 
 
 //professor
@@ -354,7 +357,7 @@ Route::get('/usuarioperfil', [App\Http\Controllers\usuariosController::class, 'u
 
 Route::get('/usuarioeditar', [App\Http\Controllers\usuariosController::class, 'usuarioEditar'])->name('usuarioeditar');
 
-Route::post('/usuarioatualizar', [App\Http\Controllers\usuariosController::class, 'usuarioAtualizar'])->name('usuarioatualizar');
+Route::get('/usuarioatualizar', [App\Http\Controllers\usuariosController::class, 'usuarioAtualizar'])->name('usuarioatualizar');
 
 Route::post('/usuarioaumentarprogressonumeros', [usuariosController::class, 'usuarioAumentarProgressoNumeros'])->name('usuarioaumentarprogressonumeros');
 
@@ -464,6 +467,11 @@ Route::get('/escolascadastrar',[App\Http\Controllers\escolasController::class, '
 Route::get('/escolaslogin',[App\Http\Controllers\escolasController::class, 'escolasLogin'])->name('escolaslogin');
 
 Route::get('/escolasperfil',[App\Http\Controllers\escolasController::class, 'escolasPerfil'])->name('escolasperfil');
+
+Route::get('/escolaseditarperfil',[App\Http\Controllers\escolasController::class, 'escolaseditarperfil'])->name('escolaseditarperfil');
+
+Route::get('/escolasatualizarperfil',[App\Http\Controllers\escolasController::class, 'escolasAtualizarPerfil'])->name('escolasatualizarperfil');
+
 
 
 ///Funções Series

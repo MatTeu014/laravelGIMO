@@ -1,4 +1,4 @@
-<x-layout titulo="Professor Séries">
+<x-layout titulo="Professor Relatórios Séries">
 	<nav class="navbar navbar-expand-lg sticky-top"
 		style="background-color:rgb(245, 101, 58); padding-top: 20px; padding-bottom: 20px;">
 		<div class="container-fluid d-flex justify-content-between align-items-center">
@@ -48,7 +48,7 @@
 
 	<h1 style="text-align: center; margin-top: 2%;">Escolha uma Série</h1>
 
-	<section class="py-5" style="padding-top: 80px; text-align: center;">
+	<section class="py-5" style="padding-top: 80px; text-align: center; height: 50vh;">
 		<div class="container" style="margin: auto;">
 			<div class="row align-items-center">
 

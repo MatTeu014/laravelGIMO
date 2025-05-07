@@ -147,18 +147,6 @@ class usuariosController extends Controller
 
         }
 
-        // Validação dos dados recebidos
-        $request->validate([
-            'nome' => 'required|string|max:255',
-            'sobrenome' => 'required|string',
-            'email' => 'required|string',
-            'senha' => 'required|string',
-            'idade' => 'required|string',
-            'idEscolaFK' => 'required|string',
-            'serie' => 'required|string',
-            'turma' => 'required|string',
-        ]);
-
         // Recupera os dados do funcionário da sessão
         $usuarios = session('usuarios');
 
@@ -173,9 +161,8 @@ class usuariosController extends Controller
             'serie' => $request->serie,
             'turma' => $request->turma,
         ]);
-
-        // Atualiza a sessão com os novos dados do funcionário
-        session(['usuarios' => $usuarios]);
+        
+        //Log::info("ID DA SERIE $usuarios");
 
         // Redireciona para a página de homeLogado ou outra página que desejar
         return redirect('usuarioperfil');

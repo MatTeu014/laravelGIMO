@@ -45,7 +45,7 @@
 
       <!-- Bloco de Perfil  -->
       <h2 style="text-align: center;">Perfil de Professor</h2>
-      <div class="card" style="width:100%; border-color: #BDBDBD; border-width: 2px; margin: auto; border-radius: 30px; text-align: center;">
+      <div class="card" style="width:100%; border-color: rgb(245, 101, 58); border-width: 2px; margin: auto; border-radius: 30px; text-align: center;">
         <div class="card-body">
           <div class="row">
 

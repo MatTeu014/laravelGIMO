@@ -1,4 +1,4 @@
-<x-layout titulo="Home Administrador">
+<x-layout titulo="Professor Relatórios Alunos">
 	<nav class="navbar navbar-expand-lg sticky-top"
 		style="background-color:rgb(245, 101, 58); padding-top: 17px; padding-bottom: 17px;">
 		<div class="container-fluid d-flex justify-content-between align-items-center">
@@ -108,261 +108,262 @@
 							<th style="border-style: solid; border-width: 2px; font-size: 17px;">{{$aluno->sobrenome}}</th>
 							<th style="border-style: solid; border-width: 2px; font-size: 17px;">{{$aluno->email}}</th>
 							<th style="border-style: solid; border-width: 2px; font-size: 17px;">{{$aluno->idade}}</th>
-							@if ( $aluno->botaoA  == 0)
+							@if ($aluno->botaoA == 0)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Incompleto</th>
-								@elseif ( $aluno->botaoA  == 1)
+							@elseif ($aluno->botaoA == 1)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Completo</th>
 							@endif
-							@if ( $aluno->botaoB  == 0)
+							@if ($aluno->botaoB == 0)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Incompleto</th>
-								@elseif ( $aluno->botaoB  == 1)
+							@elseif ($aluno->botaoB == 1)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Completo</th>
 							@endif
-							@if ( $aluno->botaoC  == 0)
+							@if ($aluno->botaoC == 0)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Incompleto</th>
-								@elseif ( $aluno->botaoC  == 1)
+							@elseif ($aluno->botaoC == 1)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Completo</th>
 							@endif
-							@if ( $aluno->botaoD  == 0)
+							@if ($aluno->botaoD == 0)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Incompleto</th>
-								@elseif ( $aluno->botaoD  == 1)
+							@elseif ($aluno->botaoD == 1)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Completo</th>
 							@endif
-							@if ( $aluno->botaoE  == 0)
+							@if ($aluno->botaoE == 0)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Incompleto</th>
-								@elseif ( $aluno->botaoE  == 1)
+							@elseif ($aluno->botaoE == 1)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Completo</th>
 							@endif
-							@if ( $aluno->botaoF  == 0)
+							@if ($aluno->botaoF == 0)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Incompleto</th>
-								@elseif ( $aluno->botaoF  == 1)
+							@elseif ($aluno->botaoF == 1)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Completo</th>
 							@endif
-							@if ( $aluno->botaoG  == 0)
+							@if ($aluno->botaoG == 0)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Incompleto</th>
-								@elseif ( $aluno->botaoG  == 1)
+							@elseif ($aluno->botaoG == 1)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Completo</th>
 							@endif
-							@if ( $aluno->botaoH  == 0)
+							@if ($aluno->botaoH == 0)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Incompleto</th>
-								@elseif ( $aluno->botaoH  == 1)
+							@elseif ($aluno->botaoH == 1)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Completo</th>
 							@endif
-							@if ( $aluno->botaoI  == 0)
+							@if ($aluno->botaoI == 0)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Incompleto</th>
-								@elseif ( $aluno->botaoI  == 1)
+							@elseif ($aluno->botaoI == 1)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Completo</th>
 							@endif
-							@if ( $aluno->botaoJ  == 0)
+							@if ($aluno->botaoJ == 0)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Incompleto</th>
-								@elseif ( $aluno->botaoJ  == 1)
+							@elseif ($aluno->botaoJ == 1)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Completo</th>
 							@endif
-							@if ( $aluno->botaoK  == 0)
+							@if ($aluno->botaoK == 0)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Incompleto</th>
-								@elseif ( $aluno->botaoK  == 1)
+							@elseif ($aluno->botaoK == 1)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Completo</th>
 							@endif
-							@if ( $aluno->botaoL  == 0)
+							@if ($aluno->botaoL == 0)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Incompleto</th>
-								@elseif ( $aluno->botaoL  == 1)
+							@elseif ($aluno->botaoL == 1)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Completo</th>
 							@endif
-							@if ( $aluno->botaoM  == 0)
+							@if ($aluno->botaoM == 0)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Incompleto</th>
-								@elseif ( $aluno->botaoM  == 1)
+							@elseif ($aluno->botaoM == 1)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Completo</th>
 							@endif
-							@if ( $aluno->botaoN  == 0)
+							@if ($aluno->botaoN == 0)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Incompleto</th>
-								@elseif ( $aluno->botaoN  == 1)
+							@elseif ($aluno->botaoN == 1)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Completo</th>
 							@endif
-							@if ( $aluno->botaoO  == 0)
+							@if ($aluno->botaoO == 0)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Incompleto</th>
-								@elseif ( $aluno->botaoO  == 1)
+							@elseif ($aluno->botaoO == 1)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Completo</th>
 							@endif
-							@if ( $aluno->botaoP  == 0)
+							@if ($aluno->botaoP == 0)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Incompleto</th>
-								@elseif ( $aluno->botaoP  == 1)
+							@elseif ($aluno->botaoP == 1)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Completo</th>
 							@endif
-							@if ( $aluno->botaoQ  == 0)
+							@if ($aluno->botaoQ == 0)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Incompleto</th>
-								@elseif ( $aluno->botaoQ  == 1)
+							@elseif ($aluno->botaoQ == 1)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Completo</th>
 							@endif
-							@if ( $aluno->botaoR  == 0)
+							@if ($aluno->botaoR == 0)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Incompleto</th>
-								@elseif ( $aluno->botaoR  == 1)
+							@elseif ($aluno->botaoR == 1)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Completo</th>
 							@endif
-							@if ( $aluno->botaoS  == 0)
+							@if ($aluno->botaoS == 0)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Incompleto</th>
-								@elseif ( $aluno->botaoS  == 1)
+							@elseif ($aluno->botaoS == 1)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Completo</th>
 							@endif
-							@if ( $aluno->botaoT  == 0)
+							@if ($aluno->botaoT == 0)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Incompleto</th>
-								@elseif ( $aluno->botaoT  == 1)
+							@elseif ($aluno->botaoT == 1)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Completo</th>
 							@endif
-							@if ( $aluno->botaoU  == 0)
+							@if ($aluno->botaoU == 0)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Incompleto</th>
-								@elseif ( $aluno->botaoU  == 1)
+							@elseif ($aluno->botaoU == 1)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Completo</th>
 							@endif
-							@if ( $aluno->botaoV  == 0)
+							@if ($aluno->botaoV == 0)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Incompleto</th>
-								@elseif ( $aluno->botaoV  == 1)
+							@elseif ($aluno->botaoV == 1)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Completo</th>
 							@endif
-							@if ( $aluno->botaoW  == 0)
+							@if ($aluno->botaoW == 0)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Incompleto</th>
-								@elseif ( $aluno->botaoW  == 1)
+							@elseif ($aluno->botaoW == 1)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Completo</th>
 							@endif
-							@if ( $aluno->botaoX  == 0)
+							@if ($aluno->botaoX == 0)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Incompleto</th>
-								@elseif ( $aluno->botaoX  == 1)
+							@elseif ($aluno->botaoX == 1)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Completo</th>
 							@endif
-							@if ( $aluno->botaoY  == 0)
+							@if ($aluno->botaoY == 0)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Incompleto</th>
-								@elseif ( $aluno->botaoY  == 1)
+							@elseif ($aluno->botaoY == 1)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Completo</th>
 							@endif
-							@if ( $aluno->botaoZ  == 0)
+							@if ($aluno->botaoZ == 0)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Incompleto</th>
-								@elseif ( $aluno->botaoZ  == 1)
+							@elseif ($aluno->botaoZ == 1)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Completo</th>
 							@endif
-							@if ( $aluno->botao0  == 0)
+							@if ($aluno->botao0 == 0)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Incompleto</th>
-								@elseif ( $aluno->botao0  == 1)
+							@elseif ($aluno->botao0 == 1)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Completo</th>
 							@endif
-							@if ( $aluno->botao1  == 0)
+							@if ($aluno->botao1 == 0)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Incompleto</th>
-								@elseif ( $aluno->botao1  == 1)
+							@elseif ($aluno->botao1 == 1)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Completo</th>
 							@endif
-							@if ( $aluno->botao2  == 0)
+							@if ($aluno->botao2 == 0)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Incompleto</th>
-								@elseif ( $aluno->botao2  == 1)
+							@elseif ($aluno->botao2 == 1)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Completo</th>
 							@endif
-							@if ( $aluno->botao3  == 0)
+							@if ($aluno->botao3 == 0)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Incompleto</th>
-								@elseif ( $aluno->botao3  == 1)
+							@elseif ($aluno->botao3 == 1)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Completo</th>
 							@endif
-							@if ( $aluno->botao4  == 0)
+							@if ($aluno->botao4 == 0)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Incompleto</th>
-								@elseif ( $aluno->botao4  == 1)
+							@elseif ($aluno->botao4 == 1)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Completo</th>
 							@endif
-							@if ( $aluno->botao5  == 0)
+							@if ($aluno->botao5 == 0)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Incompleto</th>
-								@elseif ( $aluno->botao5  == 1)
+							@elseif ($aluno->botao5 == 1)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Completo</th>
 							@endif
-							@if ( $aluno->botao6  == 0)
+							@if ($aluno->botao6 == 0)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Incompleto</th>
-								@elseif ( $aluno->botao6  == 1)
+							@elseif ($aluno->botao6 == 1)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Completo</th>
 							@endif
-							@if ( $aluno->botao7  == 0)
+							@if ($aluno->botao7 == 0)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Incompleto</th>
-								@elseif ( $aluno->botao7  == 1)
+							@elseif ($aluno->botao7 == 1)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Completo</th>
 							@endif
-							@if ( $aluno->botao8  == 0)
+							@if ($aluno->botao8 == 0)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Incompleto</th>
-								@elseif ( $aluno->botao8  == 1)
+							@elseif ($aluno->botao8 == 1)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Completo</th>
 							@endif
-							@if ( $aluno->botao9  == 0)
+							@if ($aluno->botao9 == 0)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Incompleto</th>
-								@elseif ( $aluno->botao9  == 1)
+							@elseif ($aluno->botao9 == 1)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Completo</th>
 							@endif
-							@if ( $aluno->botao10  == 0)
+							@if ($aluno->botao10 == 0)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Incompleto</th>
-								@elseif ( $aluno->botao10  == 1)
+							@elseif ($aluno->botao10 == 1)
 								<th style="border-style: solid; border-width: 2px; font-size: 17px;">Completo</th>
 							@endif
 						</tr>
 					@endforeach
 				</tbody>
 			</table>
-			</di>
+		</div>
 	</section>
 
 
-	 <!-- Footer centralizado -->
-	 <footer class="text-muted" style="background-color: #D3D3D3; width: 100%;">
-    <div class="container py-5">
-      <div class="row text-center justify-content-center">
+	<!-- Footer centralizado -->
+	<footer class="text-muted" style="background-color: #D3D3D3; width: 100%;">
+		<div class="container py-5">
+			<div class="row text-center justify-content-center">
 
-        <!-- Projeto GIMO -->
-        <div class="col-12 col-md-4 mb-4">
-          <h6 class="text-uppercase fw-bold mb-3">Projeto GIMO Desenvolvido por:</h6>
-          <div class="d-flex flex-column align-items-center">
-            <p class="mb-2">Gisele da Hora Silva</p>
-            <p class="mb-2">Isaac Sena Martins</p>
-            <p class="mb-2">Mateus Albuquerque Pavani</p>
-            <p class="mb-2">Otávio Fidalgo</p>
-          </div>
-        </div>
+				<!-- Projeto GIMO -->
+				<div class="col-12 col-md-4 mb-4">
+					<h6 class="text-uppercase fw-bold mb-3">Projeto GIMO Desenvolvido por:</h6>
+					<div class="d-flex flex-column align-items-center">
+						<p class="mb-2">Gisele da Hora Silva</p>
+						<p class="mb-2">Isaac Sena Martins</p>
+						<p class="mb-2">Mateus Albuquerque Pavani</p>
+						<p class="mb-2">Otávio Fidalgo</p>
+					</div>
+				</div>
 
-        <!-- LinkedIn centralizado e alinhado -->
-        <div class="col-12 col-md-4 mb-4">
-          <h6 class="text-uppercase fw-bold mb-3">LinkedIn</h6>
-          <div class="d-flex flex-column align-items-center">
-            <a href="https://www.linkedin.com/in/gisele-da-hora-silva-0313811a9/" target="_blank"
-              class="text-decoration-none text-primary mb-2 d-flex align-items-center">
-              <i class="fab fa-linkedin me-2"></i><span>Gisele da Hora</span>
-            </a>
-            <a href="https://www.linkedin.com/in/isaac-sena-74ab56224/" target="_blank"
-              class="text-decoration-none text-primary mb-2 d-flex align-items-center">
-              <i class="fab fa-linkedin me-2"></i><span>Isaac Sena</span>
-            </a>
-            <a href="https://www.linkedin.com/in/mateus-albuquerque-pavani-934598267/" target="_blank"
-              class="text-decoration-none text-primary mb-2 d-flex align-items-center">
-              <i class="fab fa-linkedin me-2"></i><span>Mateus Pavani</span>
-            </a>
-            <a href="https://www.linkedin.com/in/ot%C3%A1vio-fidalgo-8448a1217/" target="_blank"
-              class="text-decoration-none text-primary mb-2 d-flex align-items-center">
-              <i class="fab fa-linkedin me-2"></i><span>Otávio Fidalgo</span>
-            </a>
-          </div>
-        </div>
+				<!-- LinkedIn centralizado e alinhado -->
+				<div class="col-12 col-md-4 mb-4">
+					<h6 class="text-uppercase fw-bold mb-3">LinkedIn</h6>
+					<div class="d-flex flex-column align-items-center">
+						<a href="https://www.linkedin.com/in/gisele-da-hora-silva-0313811a9/" target="_blank"
+							class="text-decoration-none text-primary mb-2 d-flex align-items-center">
+							<i class="fab fa-linkedin me-2"></i><span>Gisele da Hora</span>
+						</a>
+						<a href="https://www.linkedin.com/in/isaac-sena-74ab56224/" target="_blank"
+							class="text-decoration-none text-primary mb-2 d-flex align-items-center">
+							<i class="fab fa-linkedin me-2"></i><span>Isaac Sena</span>
+						</a>
+						<a href="https://www.linkedin.com/in/mateus-albuquerque-pavani-934598267/" target="_blank"
+							class="text-decoration-none text-primary mb-2 d-flex align-items-center">
+							<i class="fab fa-linkedin me-2"></i><span>Mateus Pavani</span>
+						</a>
+						<a href="https://www.linkedin.com/in/ot%C3%A1vio-fidalgo-8448a1217/" target="_blank"
+							class="text-decoration-none text-primary mb-2 d-flex align-items-center">
+							<i class="fab fa-linkedin me-2"></i><span>Otávio Fidalgo</span>
+						</a>
+					</div>
+				</div>
 
-        <!-- Contato e Redes Sociais centralizados -->
-        <div class="col-12 col-md-4 mb-4">
-          <h6 class="text-uppercase fw-bold mb-3">Contato</h6>
-          <div class="d-flex flex-column align-items-center">
-            <p><i class="fas fa-envelope me-2" style="color: #000;"></i>gimo.projeto@email.com</p>
-            <p><i class="fas fa-map-marker-alt me-2" style="color: #000;"></i>Senac - SBC, Brasil</p>
-            <a href="https://www.instagram.com" target="_blank" class="text-reset d-flex align-items-center">
-              <i class="fab fa-instagram fa-lg me-2" style="color: #000;"></i><span>Instagram</span>
-            </a>
-          </div>
-        </div>
-      </div>
+				<!-- Contato e Redes Sociais centralizados -->
+				<div class="col-12 col-md-4 mb-4">
+					<h6 class="text-uppercase fw-bold mb-3">Contato</h6>
+					<div class="d-flex flex-column align-items-center">
+						<p><i class="fas fa-envelope me-2" style="color: #000;"></i>gimo.projeto@email.com</p>
+						<p><i class="fas fa-map-marker-alt me-2" style="color: #000;"></i>Senac - SBC, Brasil</p>
+						<a href="https://www.instagram.com" target="_blank"
+							class="text-reset d-flex align-items-center">
+							<i class="fab fa-instagram fa-lg me-2" style="color: #000;"></i><span>Instagram</span>
+						</a>
+					</div>
+				</div>
+			</div>
 
-      <!-- Direitos Autorais -->
-      <div class="row">
-        <div class="col-12 text-center mt-4">
-          <p class="mb-0">&copy; 2025 Projeto GIMO. Todos os direitos reservados.</p>
-        </div>
-      </div>
-    </div>
-  </footer>
+			<!-- Direitos Autorais -->
+			<div class="row">
+				<div class="col-12 text-center mt-4">
+					<p class="mb-0">&copy; 2025 Projeto GIMO. Todos os direitos reservados.</p>
+				</div>
+			</div>
+		</div>
+	</footer>
 
-  <!-- FontAwesome (caso ainda não esteja incluído) -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+	<!-- FontAwesome (caso ainda não esteja incluído) -->
+	<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
 </x-layout>
