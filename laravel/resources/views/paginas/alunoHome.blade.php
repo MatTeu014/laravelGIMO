@@ -1,9 +1,9 @@
-<x-layout titulo="Sobre-Nós Usuário">
-<nav class="navbar navbar-expand-lg sticky-top" style="background-color: #DA3E41; padding-top: 20px; padding-bottom: 20px;">
+<x-layout titulo="Home Aluno">    
+  <nav class="navbar navbar-expand-lg sticky-top" style="background-color: #DA3E41; padding-top: 20px; padding-bottom: 20px;">
     <div class="container-fluid d-flex justify-content-between align-items-center">
 
       <!-- LOGO (Imagem responsiva) -->
-      <a class="navbar-brand" href="usuarioHome">
+      <a class="navbar-brand" href="/alunoHome">
         <img src="{{URL::to('/assets/img/logo_gimo.png')}}" alt="Logo" style="width: 100px; height: auto;">
       </a>
 
@@ -11,16 +11,16 @@
       <div class="d-flex justify-content-center flex-grow-1" style="padding-top:35px;">
         <ul class="navbar-nav d-flex flex-row gap-3">
           <li class="nav-item">
-            <a href="usuarioHome" class="btn btn-danger" style="border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Home</a>
+            <a href="alunoHome" class="btn btn-danger" style="border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Home</a>
           </li>
           <li class="nav-item">
-            <a href="/usuarioSobrenos" class="btn btn-danger" style="border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Sobre</a>
+            <a href="alunoSobrenos" class="btn btn-danger" style="border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Sobre</a>
           </li>
           <li class="nav-item">
-            <a href="/usuarioAtividades" class="btn btn-danger" style="border: 2px solid black; border-radius: 30px; padding: 12px 10px; font-size: 18px; width: 120px; text-align: center;">Atividades</a>
+            <a href="/alunoAtividades" class="btn btn-danger" style="border: 2px solid black; border-radius: 30px; padding: 12px 10px; font-size: 18px; width: 120px; text-align: center;">Atividades</a>
           </li>
           <li class="nav-item">
-            <a href="{{ route('usuariorelatorio') }}" class="btn btn-danger" style="border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Relatório</a>
+            <a href="{{ route('alunosrelatorio') }}" class="btn btn-danger" style="border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Relatório</a>
           </li>
         </ul>
       </div>
@@ -39,7 +39,7 @@
                   <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
                 </svg>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="{{ route('usuarioperfil') }}">Perfil</a></li>
+                  <li><a class="dropdown-item" href="{{ route('alunosperfil') }}">Perfil</a></li>
                   <li><a class="dropdown-item" href="/">Sair</a></li>
                 </ul>
               </li>
@@ -50,62 +50,32 @@
     </div>
   </nav>
 
-  <div class="row row-cols-1 row-cols-md-4 g-4">
-  <div class="col">
-    <div class="card">
-      <img src="{{URL::to('/assets/img/gisele.png')}}" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Gisele da Hora Silva</h5>
-        <p class="card-text">•	18 anos;</p>
-        <p class="card-text">•	Formanda de Técnico de Informática no Senac de São Bernardo do Campo;</p>
-        <p class="card-text">•	Estudante de bacharelado em Ciências da computação no Senac Santo Amaro.</p>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card">
-      <img src="{{URL::to('/assets/img/isaac.png')}}" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Isaac Sena Martins</h5>
-        <p class="card-text">•	22 anos;</p>
-        <p class="card-text">•	Formando de Técnico de Informática no Senac de São Bernardo do Campo;</p>
-        <p class="card-text">•	Possuí experiencia em sistema de Banco de Dados (SISQUAL).</p>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card">
-      <img src="{{URL::to('/assets/img/mateus.png')}}" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Mateus Albuquerque Pavani</h5>
-        <p class="card-text">•	20 anos;</p>
-        <p class="card-text">•	Formando de Técnico de Informática no Senac de São Bernardo do Campo;</p>
-        <p class="card-text">•	Formado em cursos rápidos em manutenção de computadores e redes pelo Senai;</p>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card">
-      <img src="{{URL::to('/assets/img/otavio.png')}}" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Otávio Fidalgo</h5>
-        <p class="card-text">•	22 anos;</p>
-        <p class="card-text">•	Formado em curso superior em Fotografia pela Universidade Paulista;</p>
-        <p class="card-text">•	Especializado em Fotografia Gastronômica;</p>
-        <p class="card-text">•	Formando em Técnico de Informática no Senac São Bernardo do Campo;</p>
-        <p class="card-text">•	Experiente em organização de Eventos e em estoques;</p>
-        <p class="card-text">•	Experiente em correção de textos, documentos e roteirização;</p>
-        <p class="card-text">•	Experiencia em direção de arte e fotografia.</p>
-      </div>
-    </div>
-  </div>
-</div>
+  <!-- Seção de Conteúdo -->
+  <section class="py-5" style="padding-top: 80px;">
+    <div class="container">
+      <div class="row align-items-center">
 
-  <!-- FOOTER -->
-  <footer class="text-muted" style="background-color: #D3D3D3; width: 100%;">
-    <div class="container py-5">
+        <!-- Texto à esquerda -->
+        <div class="col-md-6">
+          <h2 class="mb-4">Projeto GIMO</h2>
+          <p>Como sabemos hoje vivemos em frente a uma tela, já que estamos na era da tecnologia, sendo assim todos estamos sujeitos a ficar horas em frente as telas de computadores e celulares, e isso não é diferente quando falamos de crianças nos dias atuais, pios hoje desde muito pequenos já se possuí acesso a um celular ou um computador, por diversos motivos, e a escola também já se introduz essas tecnologias nas escolas, iniciado nos anos 80, depois se popularizando em todas as escolas nos anos 90 (mais específico em 1997), possibilitando a pesquisa usando as maquinas na escola, e hoje com a crescente nos avanços da tecnologia e a implementação dessas na sociedade, incluindo nas escolas, crianças tem acesso as telas muito rápido, então, pensando nisso, pensamos em transformar isso em uma oportunidade de aprendizado, podendo ser usado de maneira responsável e incentivando o aprendizado e o estudo para todas as crianças.</p>
+          <p>O projeto GIMO tem como objetivo a elaboração de um site que auxilia alunos de ensino primário em seu aprendizado na parte de alfabetização e conhecimentos, podendo ser uma ajuda para o professor em sala de aula, proporcionando uma aula mais interativa e chamativa para as crianças. Visando as crianças com dificuldade de aprendizado, por quaisquer motivos que sejam, queremos que todas tenham uma aula interessante e que seja divertido aprender, sendo assim, podendo se usar desse site para uma melhora no ambiente escolar para ser cada vez mais receptivo para o aprendizado que é tão importante na vida de um ser humano. </p>
+        </div>
+
+        <!-- Imagem à direita -->
+        <div class="col-md-6 text-center">
+          <img src="{{URL::to('/assets/img/img_home.png')}}" alt="Imagem ilustrativa" class="img-fluid rounded">
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-muted" style="background-color: #D3D3D3; width: 100%; padding-top: 20px; padding-bottom: 20px;">
+    <div class="container">
       <div class="row text-center text-md-start">
-        <!-- Desenvolvedores -->
+        <!-- Projeto GIMO -->
         <div class="col-12 col-md-4 mb-4">
           <h6 class="text-uppercase fw-bold mb-3">Projeto GIMO Desenvolvido por:</h6>
           <div class="d-flex flex-column align-items-start">
@@ -120,7 +90,7 @@
         <div class="col-12 col-md-4 mb-4" style="text-align: center;">
           <h6 class="text-uppercase fw-bold mb-3">LinkedIn</h6>
           <div class="d-flex flex-column align-items-center">
-          <a href="https://www.linkedin.com/in/gisele-da-hora-silva-0313811a9/" target="_blank" class="text-decoration-none text-primary mb-2">
+              <a href="https://www.linkedin.com/in/gisele-da-hora-silva-0313811a9/" target="_blank" class="text-decoration-none text-primary mb-2">
                 <i class="fab fa-linkedin me-2"></i>Gisele da Hora
               </a>
               <a href="https://www.linkedin.com/in/isaac-sena-74ab56224/" target="_blank" class="text-decoration-none text-primary mb-2">
@@ -144,7 +114,7 @@
         </div>
       </div>
 
-      <!-- Redes Sociais -->
+      <!-- Redes Sociais - Siga-nos (centralizado) -->
       <div class="row">
         <div class="col-12 text-center mt-4">
           <h6 class="text-uppercase fw-bold mb-3">Redes Sociais</h6>
@@ -169,6 +139,7 @@
     </div>
   </footer>
 
-  <!-- FontAwesome -->
+  <!-- FontAwesome (caso ainda não esteja incluído) -->
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
 </x-layout>

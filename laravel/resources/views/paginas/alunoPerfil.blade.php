@@ -1,9 +1,9 @@
-<x-layout titulo="Perfil de Usuário">    
+<x-layout titulo="Perfil do Aluno">    
 	<nav class="navbar navbar-expand-lg sticky-top" style="background-color: #E5CD59; padding-top: 20px; padding-bottom: 20px;">
 		<div class="container-fluid d-flex justify-content-between align-items-center">
 
 			<!-- LOGO (Imagem responsiva) -->
-			<a class="navbar-brand" href="usuarioHome">
+			<a class="navbar-brand" href="alunoHome">
 				<img src="{{URL::to('/assets/img/logo_gimo.png')}}" alt="Logo" style="width: 100px; height: auto;">
 			</a>
 
@@ -11,19 +11,19 @@
 			<div class="d-flex justify-content-center flex-grow-1" style="padding-top:35px;">
 				<ul class="navbar-nav d-flex flex-row gap-3">
 					<li class="nav-item">
-						<a href="usuarioHome" class="btn btn-danger"
+						<a href="alunoHome" class="btn btn-danger"
 							 style="background-color: #E5CD59; border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Home</a>
 					</li>
 					<li class="nav-item">
-						<a href="/usuarioSobrenos" class="btn btn-danger"
+						<a href="/alunoSobrenos" class="btn btn-danger"
 							 style="background-color: #E5CD59; border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Sobre</a>
 					</li>
 					<li class="nav-item">
-						<a href="/usuarioAtividades" class="btn btn-danger"
+						<a href="/alunoAtividades" class="btn btn-danger"
 							 style="background-color: #E5CD59; border: 2px solid black; border-radius: 30px; padding: 12px 10px; font-size: 18px; width: 120px; text-align: center;">Atividades</a>
 					</li>
 					<li class="nav-item">
-						<a href="{{ route('usuariorelatorio') }}" class="btn btn-danger"
+						<a href="{{ route('alunosrelatorio') }}" class="btn btn-danger"
 							 style="background-color: #E5CD59; border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Relatório</a>
 					</li>
 				</ul>
@@ -43,7 +43,7 @@
 									<path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
 							</svg>
 							<ul class="dropdown-menu">
-								<li><a class="dropdown-item" href="{{ route('usuarioperfil') }}">Perfil</a></li>
+								<li><a class="dropdown-item" href="{{ route('alunosperfil') }}">Perfil</a></li>
 								<li><a class="dropdown-item" href="/">Sair</a></li>
 							</ul>
 						</li>
@@ -60,7 +60,7 @@
 		<div class="row align-items-center">
 
 			<!-- Bloco de Perfil  -->
-			<h2 style="text-align: center;">Perfil de Usuário</h2>
+			<h2 style="text-align: center;">Perfil do Aluno</h2>
 			<div class="card" style="width:100%; border-color: #E5CD59; border-width: 2px; margin: auto; border-radius: 30px; text-align: center;">
 				<div class="card-body">
 					<div class="row">
@@ -69,7 +69,7 @@
 						<div class="col-md-6">
 							<h3 style="text-align: center;">Nome:</h3>
 							<div class="form-floating mb-3">
-								<input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome" Disabled style="border-style: solid; border-color: #000000; border-width: 2px; border-radius: 26px;" value="{{ $usuarios->nome }}">
+								<input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome" Disabled style="border-style: solid; border-color: #000000; border-width: 2px; border-radius: 26px;" value="{{ $alunos->nome }}">
 								<label for="nome">Nome</label>
 							</div>
 						</div>
@@ -78,7 +78,7 @@
 						<div class="col-md-6">
 							<h3 style="text-align: center;">Sobrenome:</h3>
 							<div class="form-floating mb-3">
-								<input type="text" class="form-control" id="sobrenome" name="sobrenome" placeholder="Digite seu sobrenome" Disabled style="border-style: solid; border-color: #000000; border-width: 2px; border-radius: 26px;"  value="{{ $usuarios->sobrenome }}">
+								<input type="text" class="form-control" id="sobrenome" name="sobrenome" placeholder="Digite seu sobrenome" Disabled style="border-style: solid; border-color: #000000; border-width: 2px; border-radius: 26px;"  value="{{ $alunos->sobrenome }}">
 								<label for="sobrenome">Sobrenome</label>
 							</div>
 						</div>
@@ -87,7 +87,7 @@
 						<div class="col-md-6">
 							<h3 style="text-align: center;">E-mail:</h3>
 							<div class="form-floating mb-3">
-								<input type="email" class="form-control" id="email" name="email" placeholder="nome@exemplo.com" Disabled style="border-style: solid; border-color: #000000; border-width: 2px; border-radius: 26px;" value="{{ $usuarios->email }}">
+								<input type="email" class="form-control" id="email" name="email" placeholder="nome@exemplo.com" Disabled style="border-style: solid; border-color: #000000; border-width: 2px; border-radius: 26px;" value="{{ $alunos->email }}">
 								<label for="email">E-mail</label>
 							</div>
 						</div>
@@ -96,7 +96,7 @@
 						<div class="col-md-6">
 							<h3 style="text-align: center;">Senha:</h3>
 							<div class="form-floating mb-3">
-								<input type="text" class="form-control" id="senha" name="senha" placeholder="Senha" Disabled style="border-style: solid; border-color: #000000; border-width: 2px; border-radius: 26px;" value="{{ $usuarios->senha }}">
+								<input type="text" class="form-control" id="senha" name="senha" placeholder="Senha" Disabled style="border-style: solid; border-color: #000000; border-width: 2px; border-radius: 26px;" value="{{ $alunos->senha }}">
 								<label for="senha">Senha</label>
 							</div>
 						</div>
@@ -105,7 +105,7 @@
 						<div class="col-md-6">
 							<h3 style="text-align: center;">Idade:</h3>
 							<div class="form-floating mb-3">
-								<input type="text" class="form-control" id="idade" name="idade" placeholder="Idade" Disabled style="border-style: solid; border-color: #000000; border-width: 2px; border-radius: 26px;"  value="{{ $usuarios->idade }} Anos">
+								<input type="text" class="form-control" id="idade" name="idade" placeholder="Idade" Disabled style="border-style: solid; border-color: #000000; border-width: 2px; border-radius: 26px;"  value="{{ $alunos->idade }} Anos">
 								<label for="idade">Idade</label>
 							</div>
 						</div>
@@ -113,10 +113,10 @@
 						
 						<!-- Botão Editar -->
 						<div class="col-12 d-flex justify-content-center" style="transform: translate(0px, -0px);">
-							<a href="usuarioHome"><button type="button" class="btn btn-danger" style="width: 100%; border-radius: 30px; font-size: 18px; padding: 12px 24px; background-color: #E5CD59; border-color: #E5CD59;">
+							<a href="alunoHome"><button type="button" class="btn btn-danger" style="width: 100%; border-radius: 30px; font-size: 18px; padding: 12px 24px; background-color: #E5CD59; border-color: #E5CD59;">
 								Voltar
 							</button></a>
-							<a href="{{ route('usuarioeditar') }}"><button type="button" class="btn btn-danger" style="width: 100%; border-radius: 30px; font-size: 18px; padding: 12px 24px; margin-left: 20%; background-color: #E5CD59; border-color: #E5CD59;">
+							<a href="{{ route('alunoseditar') }}"><button type="button" class="btn btn-danger" style="width: 100%; border-radius: 30px; font-size: 18px; padding: 12px 24px; margin-left: 20%; background-color: #E5CD59; border-color: #E5CD59;">
 								Editar
 							</button></a>
 						</div>

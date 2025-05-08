@@ -9,7 +9,7 @@
       </a>
 
       <!-- BOTÃO LOGIN -->
-      <form class="d-flex" role="search" method="GET" action="/usuarioLogin">
+      <form class="d-flex" role="search" method="GET" action="/alunoLogin">
         <button type="submit" class="btn"
           style="background-color: white; border: 0px; border-radius: 30px; padding: 6px 17px; font-size: 19px; width: 100px; text-align: center; color: #E5CD59;">
           LOGIN

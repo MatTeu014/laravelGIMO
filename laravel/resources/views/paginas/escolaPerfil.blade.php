@@ -13,7 +13,7 @@
                 <ul class="navbar-nav d-flex flex-row gap-3">
 
                     <li class="nav-item">
-                        <a href="/usuarioHome" class="btn btn-danger"
+                        <a href="/escolaHome" class="btn btn-danger"
                             style=" background-color: rgb(155, 109, 50); border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Home</a>
                         <a href="/escolaCadastroSeries" class="btn btn-danger"
                             style=" background-color: rgb(155, 109, 50); border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Séries</a>

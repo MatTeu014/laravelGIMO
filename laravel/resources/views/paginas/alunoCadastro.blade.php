@@ -1,4 +1,4 @@
-<x-layout titulo="Cadastro de Usuário">
+<x-layout titulo="Cadastro do Aluno">
 
 	<nav class="navbar navbar-expand-lg" style="background-color: #f5e177; padding-top: 20px; padding-bottom: 20px;">
 		<div class="container-fluid d-flex justify-content-between align-items-center">
@@ -10,7 +10,7 @@
 
 			<!-- BOTÃO LOGIN -->
 			<form class="d-flex" role="search">
-				<a href="usuarioLogin" class="btn"
+				<a href="alunoLogin" class="btn"
 					style="background-color: white; border-radius: 30px; padding: 6px 17px; font-size: 19px; width: 100px; text-align: center; color: #E5CD59;">LOGIN</a>
 			</form>
 
@@ -19,7 +19,7 @@
 
 	<!-- TÍTULO -->
 	<br>
-	<h2 class="card-title" style="text-align: center;">Cadastro de Usuário</h2>
+	<h2 class="card-title" style="text-align: center;">Cadastro do Aluno</h2>
 	<br>
 
 	<div class="card"
@@ -35,7 +35,7 @@
 					{{ session('failed') }}
 				</div>
 			@endif
-			<form action="/usuarioscadastrar" method="GET"> <!-- Ajuste o action se necessário -->
+			<form action="/alunoscadastrar" method="GET"> <!-- Ajuste o action se necessário -->
 
 				<!-- Nome -->
 				<h3 style="text-align: center;">Nome:</h3>
@@ -82,22 +82,6 @@
 					<label for="idade">Idade</label>
 				</div>
 				<br>
-
-				<!-- Escola -->
-				<h3 style="text-align: center;">Escola:</h3>
-				<div class="form-floating mb-3">
-					<select class="form-select" id="escola" name="escola" required
-						style="border-style: solid; border-color: #000000; border-width: 2px; border-radius: 26px;">
-						<option selected disabled>Escolha a Escola</option>
-
-						@foreach ($escolas as $escola)
-							<option>{{ $escola->nome }}</option>
-						@endforeach
-
-					</select>
-					<label for="escola">Escola</label>
-				</div>
-				<br><br>
 
 				<!-- Botão Cadastrar -->
 				<div>

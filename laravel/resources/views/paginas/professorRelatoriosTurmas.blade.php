@@ -46,7 +46,7 @@
 		</div>
 	</nav>
 
-	<h1 style="text-align: center; margin-top: 2%;">Escolha uma Série</h1>
+	<h1 style="text-align: center; margin-top: 2%;">Escolha uma Turma</h1>
 
 	<section class="py-5" style="padding-top: 80px; text-align: center; height:50vh">
 		<div class="container" style="margin: auto;">

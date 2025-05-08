@@ -11,15 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('usuarios', function (Blueprint $table) {
+        Schema::create('alunos', function (Blueprint $table) {
             $table->id('id');
             $table->longtext('nome');
             $table->longtext('sobrenome');
             $table->longtext('email')->unique();
             $table->longtext('senha');
             $table->integer('idade');
-            $table->integer('idEscolaFK')->unsigned();
-            $table->foreign('idEscolaFK')->references('id')->on('escolas')->OnDelete('cascade');
             $table->integer('idSerieFK')->unsigned()->nullable();
             $table->foreign('idSerieFK')->references('id')->on('series')->nullable();
             $table->integer('idTurmaFK')->unsigned()->nullable();
@@ -73,6 +71,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('usuarios');
+        Schema::dropIfExists('alunos');
     }
 };

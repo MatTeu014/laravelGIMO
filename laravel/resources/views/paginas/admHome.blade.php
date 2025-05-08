@@ -13,7 +13,7 @@
 				<ul class="navbar-nav d-flex flex-row gap-3">
 
 					<li class="nav-item">
-						<a href="/usuarioHome" class="btn btn-danger"
+						<a href="/admHome" class="btn btn-danger"
 							style=" background-color: black; border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Home</a>
 					</li>
 				</ul>

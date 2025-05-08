@@ -1,4 +1,4 @@
-<x-layout titulo="Cadastro de Série de Usuário">
+<x-layout titulo="Cadastro de Série do Aluno">
 
 	<nav class="navbar navbar-expand-lg" style="background-color: #f5e177; padding-top: 20px; padding-bottom: 20px;">
 		<div class="container-fluid d-flex justify-content-between align-items-center">
@@ -10,7 +10,7 @@
 
 			<!-- BOTÃO LOGIN -->
 			<form class="d-flex" role="search">
-				<a href="usuarioLogin" class="btn"
+				<a href="alunoLogin" class="btn"
 					style="background-color: white; border-radius: 30px; padding: 6px 17px; font-size: 19px; width: 100px; text-align: center; color: #E5CD59;">LOGIN</a>
 			</form>
 
@@ -35,7 +35,7 @@
 					{{ session('failed') }}
 				</div>
 			@endif
-			<form action="/usuarioscadastrarserie" method="GET"> <!-- Ajuste o action se necessário -->
+			<form action="/alunoscadastrarserie" method="GET"> <!-- Ajuste o action se necessário -->
 
 
 				<!-- Série -->

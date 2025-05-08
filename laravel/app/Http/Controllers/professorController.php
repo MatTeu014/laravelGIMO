@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\professorModel;
-use App\Models\usuariosModel;
+use App\Models\alunosModel;
 use App\Models\escolasModel;
 use App\Models\seriesModel;
 use App\Models\turmasModel;
@@ -48,13 +48,12 @@ class professorController extends Controller{
         $model->email = $request->input('email');
         $model->senha = $request->input('senha');
         $model->idade = $request->input('idade');
-        $model->idEscolaFK = $idEscolaFK;
         $model->situacao = "Ativo";
     
         // Guardar os dados no banco
         $model->save();
     
-        return redirect('professorLogin')->with('success', 'Professor cadastrado com sucesso!');
+        return redirect('professorCadastro')->with('success', 'Professor cadastrado com sucesso!');
     }
 
     public function professorLogin(Request $request){
@@ -87,14 +86,19 @@ class professorController extends Controller{
     
     public function professorConsultarSeries(Request $request){
         
-        $idescola = session('idescola');
+        $idescola = escolasModel::get()->last();
         Log::info("IDESCOLA $idescola");
+
+        $idprofessor = professorModel::where('nome', $request->input('nome'))->value('id');
+        session(['idprofessor'=> $idprofessor]);
         
-        $series = seriesModel::where('idEscolaFK', $idescola)->get();
+        $series = seriesModel::where('idEscolaFK', $idescola->id)->get();
     
         return view('paginas.professorCadastroSeries', compact('series'));
 
     }
+
+
 
     public function professorCadastrarSeries(Request $request){
         
@@ -108,7 +112,8 @@ class professorController extends Controller{
     }
 
     public function professorConsultarTurmas(Request $request){
-
+        
+        
         $turmas = turmasModel::all();
     
         return view('paginas.professorCadastroTurmas', compact('turmas'));
@@ -188,7 +193,7 @@ class professorController extends Controller{
 
         $serie = $request->input('serie');
 
-        $turmas = usuariosModel::where('turma',$serie)->get();
+        $turmas = alunosModel::where('turma',$serie)->get();
 
 
         // Exibe o formulário de edição, passando os dados do funcionário

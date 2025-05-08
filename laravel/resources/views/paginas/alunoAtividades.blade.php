@@ -1,9 +1,9 @@
-<x-layout titulo="Atividades Usuário">    
+<x-layout titulo="Atividades Aluno">    
   <nav class="navbar navbar-expand-lg sticky-top" style="background-color: #DA3E41; padding-top: 20px; padding-bottom: 20px;">
     <div class="container-fluid d-flex justify-content-between align-items-center">
 
       <!-- LOGO (Imagem responsiva) -->
-      <a class="navbar-brand" href="/usuarioHome">
+      <a class="navbar-brand" href="/alunoHome">
         <img src="{{URL::to('/assets/img/logo_gimo.png')}}" alt="Logo" style="width: 100px; height: auto;">
       </a>
 
@@ -11,16 +11,16 @@
       <div class="d-flex justify-content-center flex-grow-1" style="padding-top:35px;">
         <ul class="navbar-nav d-flex flex-row gap-3">
           <li class="nav-item">
-            <a href="/usuarioHome" class="btn btn-danger" style="border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Home</a>
+            <a href="/alunoHome" class="btn btn-danger" style="border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Home</a>
           </li>
           <li class="nav-item">
-            <a href="usuarioSobrenos" class="btn btn-danger" style="border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Sobre</a>
+            <a href="alunoSobrenos" class="btn btn-danger" style="border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Sobre</a>
           </li>
           <li class="nav-item">
-            <a href="usuarioAtividades" class="btn btn-danger" style="border: 2px solid black; border-radius: 30px; padding: 12px 10px; font-size: 18px; width: 120px; text-align: center;">Atividades</a>
+            <a href="alunoAtividades" class="btn btn-danger" style="border: 2px solid black; border-radius: 30px; padding: 12px 10px; font-size: 18px; width: 120px; text-align: center;">Atividades</a>
           </li>
           <li class="nav-item">
-            <a href="{{ route('usuariorelatorio') }}" class="btn btn-danger" style="border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Relatório</a>
+            <a href="{{ route('alunosrelatorio') }}" class="btn btn-danger" style="border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Relatório</a>
           </li>
         </ul>
       </div>
@@ -39,7 +39,7 @@
                   <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
                 </svg>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="{{ route('usuarioperfil') }}">Perfil</a></li>
+                  <li><a class="dropdown-item" href="{{ route('alunosperfil') }}">Perfil</a></li>
                   <li><a class="dropdown-item" href="/">Sair</a></li>
                 </ul>
               </li>
@@ -65,13 +65,13 @@
 
                 <div class="card" style="width: 24rem; margin-left: 10%; height: 35vh; border-color: white;">
                     <div class="card-body">
-                        <a href="usuarioAlfabeto"><button style="font-size: 150px; border-radius: 30px; border-color: #4782da; border-style: solid; background-color: white;">ABC</button></a>
+                        <a href="alunoAlfabeto"><button style="font-size: 150px; border-radius: 30px; border-color: #4782da; border-style: solid; background-color: white;">ABC</button></a>
                     </div>
                 </div>
                 
                 <div class="card" style="width: 24rem; margin-left: 15%; height: 35vh; border-color: white;">
                   <div class="card-body">
-                    <a href="usuarioNumeros"><button style="font-size: 150px; border-radius: 30px; border-color: #34b764; border-style: solid; background-color: white;">123</button></a>
+                    <a href="alunoNumeros"><button style="font-size: 150px; border-radius: 30px; border-color: #34b764; border-style: solid; background-color: white;">123</button></a>
                   </div>
                 </div>
 

@@ -1,4 +1,4 @@
-<x-layout titulo="Login de Usuário">    
+<x-layout titulo="Login do Aluno">    
 
 <nav class="navbar navbar-expand-lg" style="background-color: #f5e177; padding-top: 20px; padding-bottom: 20px;">
     <div class="container-fluid d-flex justify-content-between align-items-center">
@@ -10,7 +10,7 @@
 
         <!-- BOTÕES DIREITA (USUÁRIO E ADM COM LINKS) -->
         <form class="d-flex" role="search">
-            <a href="usuariosconsultarescola" class="btn ms-2" style="background-color: white; border: 0px solid black; border-radius: 30px; padding: 6px 18px; font-size: 20px; width: 150px; text-align: center; color: #E5CD59;">CADASTRO</a>
+            <a href="alunosconsultarescola" class="btn ms-2" style="background-color: white; border: 0px solid black; border-radius: 30px; padding: 6px 18px; font-size: 20px; width: 150px; text-align: center; color: #E5CD59;">CADASTRO</a>
         </form>
 
     </div>
@@ -18,7 +18,7 @@
 
 <!-- Titulo Login -->
 <br><br>
-<h2 class="card-title" style="text-align: center;">Login de Usuário</h2>
+<h2 class="card-title" style="text-align: center;">Login do Aluno</h2>
 <br>
 
 <div class="card" style="width:50%; border-color: #f5e177; border-width: 2px; margin: auto; border-radius: 30px; text-align: center;">
@@ -30,7 +30,7 @@
     </div>
     @endif
         <!-- Formulário de Login -->
-        <form method="get"  action="/usuarioslogin">
+        <form method="get"  action="/alunoslogin">
             @csrf <!-- Token de segurança do Laravel -->
 
             <!-- Input e-mail -->  
@@ -53,8 +53,10 @@
 
             <!-- Botão Entrar -->
             <div>
+                <a href="/"><button type="button" class="btn btn-primary" style="background-color: white; color: #f5e177; border-color: #000000; border-radius: 30px; border-width: 2px; font-weight: bold; font-size: 18px; margin: auto; width: 15%; margin-right: 5%;">Voltar</button></a>
                 <button type="submit" class="btn btn-primary" style="background-color: white; color: #f5e177; border-color: #000000; border-radius: 30px; border-width: 2px; font-weight: bold; font-size: 18px; margin: auto; width: 15%;">Entrar</button>
             </div>
+
         </form>
 
     </div>

@@ -1,29 +1,34 @@
-<x-layout titulo="Editar Perfil Escola">
+<x-layout titulo="Relatório Aluno">
 	<nav class="navbar navbar-expand-lg sticky-top"
-		style="background-color: rgb(119, 81, 31); padding-top: 20px; padding-bottom: 20px;">
+		style="background-color: #DA3E41; padding-top: 20px; padding-bottom: 20px;">
 		<div class="container-fluid d-flex justify-content-between align-items-center">
 
 			<!-- LOGO (Imagem responsiva) -->
-			<a class="navbar-brand" href="escolaHome">
+			<a class="navbar-brand" href="/alunoHome">
 				<img src="{{URL::to('/assets/img/logo_gimo.png')}}" alt="Logo" style="width: 100px; height: auto;">
 			</a>
 
 			<!-- BOTÕES CENTRAIS -->
 			<div class="d-flex justify-content-center flex-grow-1" style="padding-top:35px;">
 				<ul class="navbar-nav d-flex flex-row gap-3">
-
 					<li class="nav-item">
-						<a href="/escolaHome" class="btn btn-danger"
-							style=" background-color: rgb(155, 109, 50); border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Home</a>
-						<a href="/escolaCadastroSeries" class="btn btn-danger"
-							style=" background-color: rgb(155, 109, 50); border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Séries</a>
-						<a href="seriesconsultar" class="btn btn-danger"
-							style=" background-color: rgb(155, 109, 50); border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Turmas</a>
+						<a href="/alunoHome" class="btn btn-danger"
+							style="border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Home</a>
+					</li>
+					<li class="nav-item">
+						<a href="alunoSobrenos" class="btn btn-danger"
+							style="border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Sobre</a>
+					</li>
+					<li class="nav-item">
+						<a href="/alunoAtividades" class="btn btn-danger"
+							style="border: 2px solid black; border-radius: 30px; padding: 12px 10px; font-size: 18px; width: 120px; text-align: center;">Atividades</a>
+					</li>
+					<li class="nav-item">
+						<a href="{{ route('alunosrelatorio') }}" class="btn btn-danger"
+							style="border: 2px solid black; border-radius: 30px; padding: 12px 24px; font-size: 18px; width: 120px; text-align: center;">Relatório</a>
 					</li>
 				</ul>
 			</div>
-
-
 
 			<!-- BOTÕES DIREITA (USUÁRIO) -->
 			<form class="d-flex" role="search">
@@ -44,7 +49,7 @@
 										d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
 								</svg>
 								<ul class="dropdown-menu">
-									<li><a class="dropdown-item" href="escolasperfil">Perfil</a></li>
+									<li><a class="dropdown-item" href="{{ route('alunosperfil') }}">Perfil</a></li>
 									<li><a class="dropdown-item" href="/">Sair</a></li>
 								</ul>
 							</li>
@@ -55,94 +60,74 @@
 		</div>
 	</nav>
 
+	<!-- Seção de Conteúdo -->
+	<div style=" margin-top: 2%;">
+		<h1 style="text-align: center;">Progresso do Aluno</h1>
+	</div>
+	<section class="py-5" style="padding-top: 80px; text-align: center; height: auto	;">
+		<div class="container" style="margin: auto;">
+			<div class="row align-items-center">
 
-	<form action="escolasatualizarperfil" method="get">
-		<section class="py-5" style="padding-top: 80px;"> <!-- Ajuste o padding-top para evitar sobreposição -->
-			<h2 style="text-align: center;">Editar Perfil da Escola</h2>
-			<div class="container">
-				<div class="row align-items-center">
+				<!-- Texto à esquerda -->
+				<div class="col-md-6">
+					<h2 class="mb-4">Relatório !</h2>
+					<p>• Bem-vindo a área dos relatórios. Aqui você poderá consultar seu desenvolvimento das atividades do
+						site,
+						aparecendo a sua porcentagem de progresso das atividades, tanto das letras do alfabeto e dos números.
+					</p>
+					<p>• Assim que acabar e completar os 100% em ambas as áreas, se quiser refazer seu progresso, só clicar
+						em
+						Resetar Progresso.</p>
+					<p>• Desejamos boa sorte em seus estudos e que se divirta aprendendo!</p>
+				</div>
 
-					<!-- Input nome -->
-					<div class="col-md-6">
-						<h3 style="text-align: center;">Nome da Escola:</h3>
-						<div class="form-floating mb-3">
-							<input type="text" class="form-control" id="nome" name="nome" placeholder=""
-								style="border-style: solid; border-color: #000000; border-width: 2px; border-radius: 26px;"
-								value="{{ $escolas->nome }}">
-							<label for="nome">Nome da Escola</label>
-						</div>
-					</div>
+				<!-- Conteúdo à direita -->
+				<div class="col-md-6 text-center">
+					<img src="{{URL::to('/assets/img/img_relatorio.png')}}" alt="Imagem ilustrativa"
+						class="img-fluid rounded" style="width: 400px;">
+				</div>
 
-					<!-- Input E-mail -->
-					<div class="col-md-6">
-						<h3 style="text-align: center;">E-mail da Escola:</h3>
-						<div class="form-floating mb-3">
-							<input type="email" class="form-control" id="nome" name="email" placeholder=""
-								style="border-style: solid; border-color: #000000; border-width: 2px; border-radius: 26px;"
-								value="{{ $escolas->email }}">
-							<label for="nome">E-mail da Escola</label>
-						</div>
-					</div>
-
-					<!-- Input senha -->
-					<div class="col-md-6">
-						<h3 style="text-align: center;">Senha da Escola:</h3>
-						<div class="form-floating mb-3">
-							<input type="text" class="form-control" id="senha" name="senha" placeholder=""
-								style="border-style: solid; border-color: #000000; border-width: 2px; border-radius: 26px;"
-								value="{{ $escolas->senha }}">
-							<label for="nome">Senha da Escola</label>
-						</div>
-					</div>
-
-					<!-- Input Endereço -->
-					<div class="col-md-6">
-						<h3 style="text-align: center;">Endereço da Escola:</h3>
-						<div class="form-floating mb-3">
-							<input type="text" class="form-control" id="endereco" name="endereco" placeholder=""
-								style="border-style: solid; border-color: #000000; border-width: 2px; border-radius: 26px;"
-								value="{{ $escolas->endereco }}">
-							<label for="nome">Endereço da Escola</label>
-						</div>
-					</div>
-
-					<!-- Input Telefone -->
-					<div class="col-md-6">
-						<h3 style="text-align: center;">Telefone da Escola:</h3>
-						<div class="form-floating mb-3">
-							<input type="text" class="form-control" id="telefone" name="telefone" placeholder=""
-								style="border-style: solid; border-color: #000000; border-width: 2px; border-radius: 26px;"
-								value="{{ $escolas->telefone }}">
-							<label for="nome">Telefone da Escola</label>
-						</div>
-					</div>
-
-
-					<!-- Botão Editar -->
-					<div class="col-12 d-flex justify-content-center">
-
-
-						<a href="escolasperfil"><button type="button" class="btn btn-danger"
-								style="width: 100%; border-radius: 30px; font-size: 18px; padding: 12px 24px; background-color:rgb(119, 81, 31); border-color: rgb(119, 81, 31);">Voltar
-							</button>
-						</a>
-
-						<button type="submit" class="btn btn-danger"
-							style="width: 10%; border-radius: 30px; font-size: 18px; padding: 12px 24px; margin-left: 10%; background-color: rgb(119, 81, 31); border-color: rgb(119, 81, 31);">Confirmar
-						</button>
-
+				<h3 style="margin-top: 3%;">Progresso da Atividade de Letras</h3>
+				<div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25"
+					aria-valuemin="0" aria-valuemax="100">
+					<div class="progress-bar" style="width: {{ $alunos->progressoletras }}%">
+						{{ $alunos->progressoletras + 1.2 }}%
 					</div>
 				</div>
+
+
+				<form action="{{ route('alunoresetarprogressoletras') }}" method="POST">
+					@csrf
+					<button type="progress" class="btn btn-danger"
+						style="margin-top: 2%; width: 30%; border-radius: 30px; font-size: 18px; padding: 12px 24px; background-color: #E5CD59; border-color: #E5CD59;">
+						Resetar Progresso das Letras
+					</button>
+				</form>
+
+				<h3 style="margin-top: 4%;">Progresso da Atividade de Números</h3>
+				<div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0"
+					aria-valuemax="100">
+					<div class="progress-bar text-bg-success" style="width:{{ $alunos->progressonumeros }}%">
+						{{ $alunos->progressonumeros + 0.01 }}%
+					</div>
+				</div>
+
+				<form action="{{ route('alunoresetarprogressonumeros') }}" method="POST">
+					@csrf
+					<button type="submit" class="btn btn-danger"
+						style="margin-top: 2%; width: 30%; border-radius: 30px; font-size: 18px; padding: 12px 24px; background-color: #E5CD59; border-color: #E5CD59;">
+						Resetar Progresso dos Números
+					</button>
+				</form>
+
 			</div>
-		</section>
-	</form>
+		</div>
+	</section>
 
-
-	<!-- Footer remains unchanged -->
-	<footer class="text-muted" style="background-color: #D3D3D3; width: 100%;">
-		<div class="container py-5">
+	<!-- Footer -->
+	<footer class="text-muted" style="float: left;background-color: #D3D3D3; width: 100%; padding-top: 20px; padding-bottom: 20px;">
+		<div class="container">
 			<div class="row text-center text-md-start">
-
 				<!-- Projeto GIMO -->
 				<div class="col-12 col-md-4 mb-4">
 					<h6 class="text-uppercase fw-bold mb-3">Projeto GIMO Desenvolvido por:</h6>
@@ -192,7 +177,6 @@
 					<h6 class="text-uppercase fw-bold mb-3">Redes Sociais</h6>
 					<a href="https://www.linkedin.com" target="_blank" class="me-4 text-reset">
 						<i class="fab fa-linkedin fa-lg"></i>
-
 					</a>
 					<a href="https://www.instagram.com" target="_blank" class="me-4 text-reset">
 						<i class="fab fa-instagram fa-lg"></i>

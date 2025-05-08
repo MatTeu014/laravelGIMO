@@ -8,7 +8,7 @@ use App\Models\escolasModel;
 use App\Models\professorModel;
 use App\Models\seriesModel;
 use App\Models\turmasModel;
-use App\Models\usuariosModel;
+use App\Models\alunosModel;
 use App\Models\professoresseriesturmasModel;
 
 class admsController extends Controller{
@@ -63,7 +63,7 @@ class admsController extends Controller{
             $turmas = turmasModel::all();
             $professores = professorModel::all();
             $professoresseriesturmas = professoresseriesturmasModel::all();
-            $alunos = usuariosModel::all();
+            $alunos = alunosModel::all();
 
             
             return view('paginas.admHome', compact( 'alunos', 'escolas', 'professores', 'series', 'turmas', 'professoresseriesturmas'));

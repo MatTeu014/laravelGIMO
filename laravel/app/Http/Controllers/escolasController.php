@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\escolasModel;
 use App\Models\seriesModel;
 use App\Models\turmasModel;
-use App\Models\usuariosModel;
+use App\Models\alunosModel;
 use Illuminate\Support\Facades\Log;
 
 class escolasController extends Controller{
