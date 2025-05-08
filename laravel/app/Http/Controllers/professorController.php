@@ -13,6 +13,17 @@ use Illuminate\Support\Facades\Log;
 
 class professorController extends Controller{
     
+    public function professorRelatoriosAlunos()
+{
+    $alunos = alunosModel::all(); // Obtenha todos os alunos, se necessário para a tabela
+
+    // Contar alunos com botaoA como 1 (true) e 0 (false)
+    $botaoACompleto = alunosModel::where('botaoA', 1)->count();
+    $botaoAIncompleto = alunosModel::where('botaoA', 0)->count();
+
+    return view('paginas.professorRelatoriosAlunos', compact('alunos', 'botaoACompleto', 'botaoAIncompleto'));
+}
+    
     public function index(){
         
         $dados=professorModel::all(); //todos os dados do banco

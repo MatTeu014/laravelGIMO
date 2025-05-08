@@ -52,7 +52,7 @@
 		<div class="container" style="margin: auto;">
 			<div class="row align-items-center">
 
-				<form action="professoresseriesturmaconsultaalunos" method="get">
+				<form action="professorrelatoriosalunos" method="get">
 
 					<div class="container" style="margin: auto;">
 						<div class="row align-items-center">

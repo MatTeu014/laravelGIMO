@@ -455,6 +455,8 @@ Route::get('/professorconsultarseries',[App\Http\Controllers\professorController
 
 Route::get('/professorconsultarturmas',[App\Http\Controllers\professorController::class, 'professorConsultarTurmas'])->name('professorconsultarturmas');
 
+Route::get('/professorrelatoriosalunos',[App\Http\Controllers\professorController::class, 'professorRelatoriosAlunos'])->name('professorrelatoriosalunos');
+
 
 
 //Funções Escolas
