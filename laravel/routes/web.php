@@ -455,7 +455,15 @@ Route::get('/professorconsultarseries',[App\Http\Controllers\professorController
 
 Route::get('/professorconsultarturmas',[App\Http\Controllers\professorController::class, 'professorConsultarTurmas'])->name('professorconsultarturmas');
 
+Route::get('/professorrelatoriosturmas',[App\Http\Controllers\professorController::class, 'professorRelatoriosTurmas'])->name('professorrelatoriosturmas');
+
+Route::get('/professorconsultaralunos',[App\Http\Controllers\professorController::class, 'professorConsultarAlunos'])->name('professorconsultaralunos');
+
 Route::get('/professorrelatoriosalunos',[App\Http\Controllers\professorController::class, 'professorRelatoriosAlunos'])->name('professorrelatoriosalunos');
+
+Route::get('/professorconsultarseriesalunos',[App\Http\Controllers\professorController::class, 'professorConsultarSeriesAlunos'])->name('professorconsultarseriesalunos');
+
+Route::get('/professorconsultarturmasalunos',[App\Http\Controllers\professorController::class, 'professorConsultarTurmasAlunos'])->name('professorconsultarturmasalunos');
 
 
 

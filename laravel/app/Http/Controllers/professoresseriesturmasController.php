@@ -60,7 +60,7 @@ class professoresseriesturmasController extends Controller
         session(['idseries' => $series->pluck('id')]);
         
         //Log::info(" dadaad $idserieFK");  
-        return view('paginas.professorRelatoriosSeries', compact('series'));
+        return view('paginas.professorConsultarSeries', compact('series'));
 
     }
 
@@ -80,7 +80,8 @@ class professoresseriesturmasController extends Controller
         session(['turma'=> $turmas]);
         
         
-        return view('paginas.professorRelatoriosTurmas', compact('turmas'));
+        
+        return view('paginas.professorConsultarTurmas', compact('turmas'));
 
     }
 
@@ -94,10 +95,11 @@ class professoresseriesturmasController extends Controller
 
         $alunos = alunosModel::where('idSerieFK', $serie)->where('idTurmaFK', $turma)->get();
 
-        Log::info(" dadaad $escola, $serie, $turma");
+        Log::info(" escola serie e turma $escola, $serie, $turma");
 
         return view('paginas.professorRelatoriosAlunos', compact('alunos'));
 
     }
+
 
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\professoresseriesturmasModel;
 use Illuminate\Http\Request;
 use App\Models\professorModel;
 use App\Models\alunosModel;
@@ -11,36 +12,116 @@ use App\Models\turmasModel;
 
 use Illuminate\Support\Facades\Log;
 
-class professorController extends Controller{
-    
-    public function professorRelatoriosAlunos()
+class professorController extends Controller
 {
-    $alunos = alunosModel::all(); // Obtenha todos os alunos, se necessário para a tabela
 
-    // Contar alunos com botaoA como 1 (true) e 0 (false)
-    $botaoACompleto = alunosModel::where('botaoA', 1)->count();
-    $botaoAIncompleto = alunosModel::where('botaoA', 0)->count();
+    public function professorConsultarSeriesAlunos(Request $request)
+    {
 
-    return view('paginas.professorRelatoriosAlunos', compact('alunos', 'botaoACompleto', 'botaoAIncompleto'));
-}
-    
-    public function index(){
-        
-        $dados=professorModel::all(); //todos os dados do banco
-        return view('')->With('dados',$dados);
+        $idserieFK = professoresseriesturmasModel::where('idProfessorFK', session('idprofessor'))->pluck('idSerieFK');
+
+        session(['idserie' => $idserieFK]);
+
+        $series = seriesModel::whereIn('id', $idserieFK)->get();
+        session(['nomeserie' => $request->input('serie')]);
+
+        return view('paginas.professorConsultarSeriesAlunos', compact('series'));
 
     }
 
-    public function professorConsultarEscolas(Request $request){
+    public function professorConsultarTurmasAlunos(Request $request)
+    {
+
+        $idprofessor = session('idprofessor');
+        $idturmaFK = professoresseriesturmasModel::where('idProfessorFK', $idprofessor)->where('idSerieFK', $request->input('serie'))->pluck('idTurmaFK');
+        
+        $serie = $request->input('serie');
+        
+        $turmas = turmasModel::whereIn('id', $idturmaFK)->get();
+        
+        Log::info(" dadaad $turmas");
+        session(['idturma' => $turmas->pluck('id')]);
+        
+        return view('paginas.professorConsultarTurmasAlunos', compact('turmas'));
+
+    }
+
+    public function professorConsultarSeries(Request $request)
+    {
+
+        $idescola = escolasModel::get()->last();
+        Log::info("IDESCOLA $idescola");
+
+        $idprofessor = professorModel::where('nome', $request->input('nome'))->value('id');
+        session(['idprofessor' => $idprofessor]);
+
+        $series = seriesModel::where('idEscolaFK', $idescola->id)->get();
+
+        return view('paginas.professorCadastroSeries', compact('series'));
+
+    }
+   public function professorConsultarTurmas(Request $request)
+    {
+
+
+        $turmas = turmasModel::all();
+
+        return view('paginas.professorCadastroTurmas', compact('turmas'));
+
+    }
+
+    public function professorConsultarAlunos()
+    {
+
+        $alunos = alunosModel::whereIn('idSerieFK',session('idserie'))->where('idTurmaFK', session('idturma'))->get(); 
+        Log::info("ID DO PROFESSOR $alunos");
+        return view('paginas.professorConsultarAlunos', compact('alunos'));
+    }
+    
+    public function professorRelatoriosAlunos(Request $request)
+    {
+        $alunos = alunosModel::where('nome', $request->input('nome'))->get(); 
+        
+        Log::info("ID DO PROFESSOR $alunos");
+        
+        return view('paginas.professorRelatoriosAlunos', compact('alunos'));
+    }
+
+    public function professorRelatoriosTurmas(Request $request)
+    {
+        
+        $idturma = $request->input('turma');
+
+        $progressoNumerosIncompleto = alunosModel::where('idTurmaFK', $idturma)->where('progressonumeros','!=', 99.99)->count();
+        $progressoNumerosCompleto = alunosModel::where('idTurmaFK', $idturma)->where('progressonumeros', 99.99)->count();
+
+        $progressoLetrasIncompleto = alunosModel::where('idTurmaFK', $idturma)->where('progressoletras','!=', 98.8)->count();
+        $progressoLetrasCompleto = alunosModel::where('idTurmaFK', $idturma)->where('progressoletras', 98.8)->count();
+
+        return view('paginas.professorRelatoriosTurmas', compact('progressoNumerosCompleto', 'progressoNumerosIncompleto', 'progressoLetrasIncompleto', 'progressoLetrasCompleto'));
+    }
+
+
+    public function index()
+    {
+
+        $dados = professorModel::all(); //todos os dados do banco
+        return view('')->With('dados', $dados);
+
+    }
+
+    public function professorConsultarEscolas(Request $request)
+    {
 
         $escolas = escolasModel::all();
-    
+
         return view('paginas.professorCadastro', compact('escolas'));
 
     }
 
 
-    public function professorCadastrar(Request $request){
+    public function professorCadastrar(Request $request)
+    {
 
         $email = $request->input('email');
 
@@ -49,7 +130,7 @@ class professorController extends Controller{
         if ($emailExistente) {
             return redirect('professorCadastro')->with('failed', 'E-mail já cadastrado! Use outro E-mail');
         }
-    
+
         $idEscolaFK = escolasModel::where('nome', $request->input('escola'))->value('id');
 
         // Inserir Dados
@@ -60,23 +141,24 @@ class professorController extends Controller{
         $model->senha = $request->input('senha');
         $model->idade = $request->input('idade');
         $model->situacao = "Ativo";
-    
+
         // Guardar os dados no banco
         $model->save();
-    
+
         return redirect('professorCadastro')->with('success', 'Professor cadastrado com sucesso!');
     }
 
-    public function professorLogin(Request $request){
+    public function professorLogin(Request $request)
+    {
         $email = $request->input('email');
         $senha = $request->input('senha');
-        
+
         // Buscar o funcionário pelo nome
-     
-        
+
+
         // Verificar se o funcionário existe e a senha está correta
-        if ($professores=professorModel::where('email', $email)->where('senha', $senha)->first()) {
-            
+        if ($professores = professorModel::where('email', $email)->where('senha', $senha)->first()) {
+
             // Armazenar os dados do funcionário na sessão
             session(['professores' => $professores]);
             $idescola = professorModel::where('email', $email)->value('idEscolaFK');
@@ -85,64 +167,48 @@ class professorController extends Controller{
             $idprofessor = professorModel::where('email', $email)->value('id');
             session(['idprofessor' => $idprofessor]);
             Log::info("ID DO PROFESSOR $idprofessor");
-            
+
             // Redirecionar para a página homeLogado
             return redirect('professorHome');
         } else {
             // Login falhou
             return redirect('professorLogin')->with('failed', 'E-mail ou senha inválido');
         }
-        
-    }
-    
-    public function professorConsultarSeries(Request $request){
-        
-        $idescola = escolasModel::get()->last();
-        Log::info("IDESCOLA $idescola");
-
-        $idprofessor = professorModel::where('nome', $request->input('nome'))->value('id');
-        session(['idprofessor'=> $idprofessor]);
-        
-        $series = seriesModel::where('idEscolaFK', $idescola->id)->get();
-    
-        return view('paginas.professorCadastroSeries', compact('series'));
 
     }
 
 
 
-    public function professorCadastrarSeries(Request $request){
-        
+    public function professorCadastrarSeries(Request $request)
+    {
+
         $idescola = session('idescola');
         Log::info("IDESCOLA $idescola");
+
         
+
         $series = seriesModel::where('idEscolaFK', $idescola)->get();
-    
+
         return view('paginas.professorCadastroSeries', compact('series'));
 
     }
 
-    public function professorConsultarTurmas(Request $request){
-        
-        
-        $turmas = turmasModel::all();
-    
-        return view('paginas.professorCadastroTurmas', compact('turmas'));
 
-    }
 
-    public function professorPerfil(){
+    public function professorPerfil()
+    {
         // Verifica se o funcionário está logado na sessão
         if (!session()->has('professores')) {
             return redirect()->route('professoresPerfil'); // Redireciona se não estiver logado
         }
-        
+
         $professores = session('professores'); // Recupera os dados do funcionário da sessão
         return view('paginas.professorPerfil', compact('professores')); // Passa os dados para a view
     }
 
-    
-    public function professorEditar2(){
+
+    public function professorEditar2()
+    {
         // Verifica se o funcionário está logado na sessão
         if (!session()->has('professores')) {
         }
@@ -154,7 +220,8 @@ class professorController extends Controller{
         return view('paginas.professorEditarPerfil', compact('professores'));
     }
 
-    public function professorAtualizar2(Request $request){
+    public function professorAtualizar2(Request $request)
+    {
         // Verifica se o funcionário está logado na sessão
         if (!session()->has('professores')) {
 
@@ -188,7 +255,8 @@ class professorController extends Controller{
         return redirect('professorperfil');
     }
 
-    public function professorSeries(Request $request){
+    public function professorSeries(Request $request)
+    {
         // Verifica se o funcionário está logado na sessão
         if (!session()->has('professores')) {
         }
@@ -196,15 +264,16 @@ class professorController extends Controller{
 
     }
 
-    public function professorTurmas(Request $request){
+    public function professorTurmas(Request $request)
+    {
         // Verifica se o funcionário está logado na sessão
         if (!session()->has('professores')) {
         }
-        
+
 
         $serie = $request->input('serie');
 
-        $turmas = alunosModel::where('turma',$serie)->get();
+        $turmas = alunosModel::where('turma', $serie)->get();
 
 
         // Exibe o formulário de edição, passando os dados do funcionário
